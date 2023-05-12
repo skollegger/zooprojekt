@@ -5,10 +5,20 @@
  */
 package zooprojekt;
 
+import java.util.Date;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author julia
  */
 public class Mitarbeiter {
-    
+    private int MitarbeiterId;
+    private StringProperty Vorname;
+    private StringProperty Nachname;
+    private IntegerProperty Plz;
+    private StringProperty Strasse;
+    private StringProperty HausNr;
+    private Date Geburtstag;
 }
