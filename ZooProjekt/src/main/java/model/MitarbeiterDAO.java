@@ -2,6 +2,7 @@ package model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import util.DBConnector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,28 +17,31 @@ public class MitarbeiterDAO {
 
         try {
             con = DBConnector.connect();
-            String sql = "SELECT * FROM countries";
+            String sql = "SELECT * FROM Mitarbeiter";
             ResultSet rs = con.createStatement().executeQuery(sql);
 
             while (rs.next()) {
-                tiere = new Mitarbeiter(
+                mitarbeiter = new Mitarbeiter(
                         rs.getInt("id"),
-                        rs.getString("country"),
-                        rs.getString("country_code"),
-                        rs.getInt("area")
+                        rs.getString("Vorname"),
+                        rs.getString("Nachname"),
+                        rs.getInt("Plz"),
+                        rs.getString("Strasse"),
+                        rs.getInt("HausNr"),
+                        rs.getDate("Geburtstag")
                 );
-                countries.add(tiere);
+                Zoo.add(mitarbeiter);
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
 
-        return countries;
+        return Zoo;
     }
 
-    public static String getCountryById (int id) {
+    public static String getMitarbeiterById (int id) {
         Connection con;
-        String country = "no country";
+        String Mitarbeiter = "no Mitarbeiter";
 
         try {
             con = DBConnector.connect();
@@ -45,11 +49,11 @@ public class MitarbeiterDAO {
             ResultSet rs = con.createStatement().executeQuery(sql);
 
             rs.first();
-            country = rs.getString("country");
+            Mitarbeiter = rs.getString("country");
         }
         catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        return country;
+        return Mitarbeiter;
     }
 }
