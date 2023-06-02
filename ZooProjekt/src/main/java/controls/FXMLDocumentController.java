@@ -140,7 +140,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleMiShowAction(ActionEvent event) {
     }
-    
 }
        /*
         if (cbNames.getItems() == null)

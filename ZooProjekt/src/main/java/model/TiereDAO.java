@@ -10,48 +10,51 @@ import java.sql.SQLException;
 
 
 public class TiereDAO {
-    public static ObservableList<Tiere> getCountries () {
-        ObservableList<Tiere> countries =
+    public static ObservableList<Tiere> getTiere () {
+            ObservableList<Tiere> Zoo =
                 FXCollections.observableArrayList();
         Connection con;
         Tiere tiere;
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT * FROM countries";
+            String sql = "SELECT * FROM Tiere";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
                 tiere = new Tiere(
                      rs.getInt("id"),
-                     rs.getString("country"),
-                     rs.getString("country_code"),
-                     rs.getInt("area")
+                     rs.getString("Name"),
+                     rs.getString("Art"),
+                     rs.getInt("Alter"),
+                     rs.getString("Geschlecht"),
+                     rs.getInt("Gehege"),
+                     rs.getDate("Futterzeit")
                 );
-                countries.add(tiere);
+                Zoo.add(tiere);
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
         
-        return countries;
+        return Tiere;
     }
 
-    public static String getCountryById (int id) {
+    public static String getTiereById (int id) {
         Connection con;
-        String country = "no country";
+        String Tiere = "no Tiere";
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT * FROM countries Where id = " + id;
+            String sql = "SELECT * FROM Tiere Where id = " + id;
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             rs.first();
-            country = rs.getString("country");
+            Tiere = rs.getString("Tiere");
         }
         catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        return country;
+        return Tiere;
     }
 }
