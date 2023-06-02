@@ -5,35 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controls/ControlsMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocument.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Tiere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/TiereDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_PersonedController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/src/main/java/com/example/demo/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/src/main/java/com/example/demo/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZooProjekt1/demo/src/main/resources/com/example/demo/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/DBConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/DML_DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt1/src/controls/ControlsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt1/src/controls/ControlsMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt1/src/model/Tiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt1/src/model/Tiere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt1/src/model/TiereDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt1/src/model/TiereDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt1/src/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt1/src/model/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt1/src/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt1/src/model/ZooDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocument.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -102,11 +84,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685698181259</updated>
-      <workItem from="1685698182607" duration="496000" />
+      <workItem from="1685698182607" duration="2215000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/ZooDAO.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

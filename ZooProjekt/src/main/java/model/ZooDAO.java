@@ -26,36 +26,33 @@ public class ZooDAO {
     };
 */
     
-    public static ObservableList<Zoo> getPersons () {
-        ObservableList<Zoo> personsList =
+    public static ObservableList<Zoo> getZoo () {
+        ObservableList<Zoo> ZooList =
                 FXCollections.observableArrayList();
         Connection con;
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT p.*, c.country FROM persons p, countries c "
-                    + " WHERE p.country_id = c.id ";
+            String sql = "SELECT * From  Zoo";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
                 char full_time = rs.getString("full_time").charAt(0);
                 boolean isFullTime = full_time == 'y';
-                personsList.add(new Zoo(
-                     rs.getInt("id"),
-                     rs.getString("last_name"),
-                     rs.getString("first_name"),
-                     rs.getInt("yob"),
-                     rs.getString("department"),
-                     isFullTime,
-                     rs.getInt("country_id"),
-                     rs.getString(("country"))
-                ));
+                ZooList.add(new Zoo(
+                     rs.getInt("Id"),
+                     rs.getString("Name"),
+                     rs.getString("Ort"),
+                     rs.getInt("Eintrittskosten"),
+                     rs.getDate("Oeffnungszeiten"),
+                     rs.getDate("Schliesszeiten"))
+                );
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
         
-        return personsList;
+        return ZooList;
     }
 /*
     public static ObservableList<Country> getCountries () {
@@ -66,12 +63,11 @@ public class ZooDAO {
 */    
     public static void update(Zoo actZoo) {
         String sql = "UPDATE persons SET "
-                + " first_name  = '" + actZoo.getFirstName() + "'"
-                + ", last_name  = '" + actZoo.getLastName() + "'"
-                + ", yob = " + actZoo.getYob()
-                + ", department = '" + actZoo.getDepartment() + "'"
-                + ", full_time = '" + (actZoo.isFullTime() ? 'y':'n') + "'"
-                + ", country_id = " + actZoo.getCountryId()
+                + " Name  = '" + actZoo.getName() + "'"
+                + ", Ort  = '" + actZoo.getOrt() + "'"
+                + ", Eintrittskosten = " + actZoo.getEintrittskosten()  + "'"
+                + ", Oeffnungszeiten = '" + actZoo.getOeffnungszeiten() + "'"
+                + ", Schliesszeiten = '" + (actZoo.getSchliesszeiten() ? 'y':'n') + "'"
                 + " WHERE id = " + actZoo.getId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
