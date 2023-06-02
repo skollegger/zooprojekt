@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/src/main/java/util/DBConnector.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/util/DML_DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -13,17 +14,31 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Mitarbeiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+<<<<<<< Updated upstream
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -31,6 +46,8 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+=======
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectId" id="2QdzJtibhB3WFQT8mNzODYgZeF8" />
   <component name="ProjectViewState">
@@ -43,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/julia/Documents/infi/zooprojekt/ZooProjekt/src/main/java",
+    "last_opened_file_path": "C:/Users/Sabine Kollegger/OneDrive/Dokumente/GitHub/zooprojekt/ZooProjekt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,6 +108,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< Updated upstream
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -101,5 +119,17 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> Stashed changes
   </component>
 </project>
