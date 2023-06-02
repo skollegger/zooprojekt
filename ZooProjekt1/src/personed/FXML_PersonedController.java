@@ -17,7 +17,7 @@ import javafx.scene.control.ToggleGroup;
 import model.Tiere;
 import model.TiereDAO;
 import model.Zoo;
-import model.PersonDAO;
+import model.ZooDAO;
 
 
 public class FXML_PersonedController implements Initializable {
@@ -62,7 +62,7 @@ public class FXML_PersonedController implements Initializable {
         actZoo.setFullTime(chbFullTime.isSelected());
         actZoo.setCountryId(cbCountries.getSelectionModel().getSelectedItem().getId());
         actZoo.setCountry(TiereDAO.getCountryById(actZoo.getCountryId()));
-        PersonDAO.update (actZoo);
+        ZooDAO.update (actZoo);
     }
     
     public void setPerson (Zoo actZoo) {
