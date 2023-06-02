@@ -14,14 +14,14 @@ import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import model.Country;
-import model.CountryDAO;
-import model.Person;
+import model.Tiere;
+import model.TiereDAO;
+import model.Zoo;
 import model.PersonDAO;
 
 
 public class FXML_PersonedController implements Initializable {
-    private Person actPerson;
+    private Zoo actZoo;
     
     @FXML
     private TextField tfLastName;
@@ -42,7 +42,7 @@ public class FXML_PersonedController implements Initializable {
     @FXML
     private CheckBox chbFullTime;
     @FXML
-    private ComboBox<Country> cbCountries;
+    private ComboBox<Tiere> cbCountries;
 
 
     @Override
@@ -50,34 +50,34 @@ public class FXML_PersonedController implements Initializable {
         spYob.setValueFactory(
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(1950,2020)
         );
-        cbCountries.setItems(CountryDAO.getCountries());
+        cbCountries.setItems(TiereDAO.getCountries());
     }    
 
     @FXML
     private void handleMiSaveAction(ActionEvent event) {
-        actPerson.setLastName(tfLastName.getText());
-        actPerson.setFirstName(tfFirstName.getText());
-        actPerson.setYob(spYob.getValue());
-        actPerson.setDepartment(((RadioButton)tgDepartments.getSelectedToggle()).getText());
-        actPerson.setFullTime(chbFullTime.isSelected());
-        actPerson.setCountryId(cbCountries.getSelectionModel().getSelectedItem().getId());
-        actPerson.setCountry(CountryDAO.getCountryById(actPerson.getCountryId()));
-        PersonDAO.update (actPerson);
+        actZoo.setLastName(tfLastName.getText());
+        actZoo.setFirstName(tfFirstName.getText());
+        actZoo.setYob(spYob.getValue());
+        actZoo.setDepartment(((RadioButton)tgDepartments.getSelectedToggle()).getText());
+        actZoo.setFullTime(chbFullTime.isSelected());
+        actZoo.setCountryId(cbCountries.getSelectionModel().getSelectedItem().getId());
+        actZoo.setCountry(TiereDAO.getCountryById(actZoo.getCountryId()));
+        PersonDAO.update (actZoo);
     }
     
-    public void setPerson (Person actPerson) {
-        this.actPerson = actPerson;
-        tfLastName.setText(actPerson.getLastName());
-        tfFirstName.setText(actPerson.getFirstName());
-        spYob.getValueFactory().setValue(actPerson.getYob());
+    public void setPerson (Zoo actZoo) {
+        this.actZoo = actZoo;
+        tfLastName.setText(actZoo.getLastName());
+        tfFirstName.setText(actZoo.getFirstName());
+        spYob.getValueFactory().setValue(actZoo.getYob());
         rbIt.setSelected(true);  //Defaultauswahl
         for (Toggle rb : tgDepartments.getToggles()) {
-            if (((RadioButton)rb).getText().equals(actPerson.getDepartment()))
+            if (((RadioButton)rb).getText().equals(actZoo.getDepartment()))
                 tgDepartments.selectToggle(rb);
         }
-        chbFullTime.setSelected(actPerson.isFullTime());
-        for (Country country : cbCountries.getItems())
-            if (country.getId() == actPerson.getCountryId())
-                cbCountries.getSelectionModel().select(country);        
+        chbFullTime.setSelected(actZoo.isFullTime());
+        for (Tiere tiere : cbCountries.getItems())
+            if (tiere.getId() == actZoo.getCountryId())
+                cbCountries.getSelectionModel().select(tiere);
     }
 }

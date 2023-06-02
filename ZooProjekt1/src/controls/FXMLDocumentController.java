@@ -28,40 +28,38 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.Country;
-import model.CountryDAO;
-import model.Person;
+import model.Zoo;
 import model.PersonDAO;
 import personed.FXML_PersonedController;
 
 
 
 public class FXMLDocumentController implements Initializable {
-    private Person actPerson;
+    private Zoo actZoo;
     private String []departments = {"IT", "Sales", "Finance"};
     //private RadioButton []radios = new RadioButton[departments.length];
     //private ToggleGroup deptRadioGrp = new ToggleGroup();
-    private ObservableList<Person> myPersonList;
-    private ListProperty<Person> listProperty = new SimpleListProperty(); 
+    private ObservableList<Zoo> myPersonList;
+    private ListProperty<Zoo> listProperty = new SimpleListProperty();
 
     @FXML
-    private ComboBox<Person> cbPersons;
+    private ComboBox<Zoo> cbPersons;
     @FXML
     private MenuItem miEdit;
     @FXML
     private MenuItem miShow;
     @FXML
-    private TableView<Person> tvPersons;
+    private TableView<Zoo> tvPersons;
     @FXML               //Zeilenobjektklasse, Memberklasse
-    private TableColumn<Person, String> tcLastname;
+    private TableColumn<Zoo, String> tcLastname;
     @FXML
-    private TableColumn<Person, String> tcFirstname;
+    private TableColumn<Zoo, String> tcFirstname;
     @FXML
-    private TableColumn<Person, Integer> tcYob;
+    private TableColumn<Zoo, Integer> tcYob;
     @FXML
-    private TableColumn<Person, Boolean> tcFullTime;
+    private TableColumn<Zoo, Boolean> tcFullTime;
     @FXML
-    private TableColumn<Person, String> tcCountry;
+    private TableColumn<Zoo, String> tcCountry;
     
     
     //Zeitpunkt: Öffnen der GUI, nachdem alle
@@ -86,7 +84,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleCbPersonsAction(ActionEvent event) {
         //merke den aktuellen Datensatz
-        actPerson = cbPersons.getSelectionModel().getSelectedItem();
+        actZoo = cbPersons.getSelectionModel().getSelectedItem();
         //getSelectedItem liefert eine Referenz auf ein Personenobjekt !!!
         //lblName.setText(cbPersons.getSelectionModel().getSelectedItem().getLastName());
     }
@@ -96,20 +94,20 @@ public class FXMLDocumentController implements Initializable {
         int inx = cbPersons.getSelectionModel().getSelectedIndex();
         if (inx == -1)
             return;
-        actPerson = myPersonList.get(inx);
+        actZoo = myPersonList.get(inx);
         
         try {
             FXMLLoader loader = new FXMLLoader();                   //Loader Objekt
             loader.setLocation(getClass().getResource("/personed/FXML_Personed.fxml"));
             Parent root = loader.load();                            //Wurzelcontrol
             FXML_PersonedController ctrl = loader.getController();  //ref. Controlerobj
-            ctrl.setPerson(actPerson);
+            ctrl.setPerson(actZoo);
             Stage stage = new Stage();                              //neue Bühne
             stage.initModality(Modality.WINDOW_MODAL);              //im Vordergrund
             stage.setScene(new Scene(root));
             stage.showAndWait();                                    //Anzeige
-            System.out.println("after Dialog: " + actPerson);
-            myPersonList.set(inx, actPerson);
+            System.out.println("after Dialog: " + actZoo);
+            myPersonList.set(inx, actZoo);
 
             //cbPersons.setItems(PersonDAO.getPersons());
         } catch (IOException ex) {
@@ -137,7 +135,7 @@ public class FXMLDocumentController implements Initializable {
         int inx = cbPersons.getSelectionModel().getSelectedIndex();
         if (inx == -1)
             return;
-        actPerson = myPersonList.get(inx);
+        actZoo = myPersonList.get(inx);
 /*        
         //cbPersons.getItems().remove(actPerson);
         //??

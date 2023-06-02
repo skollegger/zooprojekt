@@ -28,8 +28,8 @@ public class PersonDAO {
     };
 */
     
-    public static ObservableList<Person> getPersons () {
-        ObservableList<Person> personsList = 
+    public static ObservableList<Zoo> getPersons () {
+        ObservableList<Zoo> personsList =
                 FXCollections.observableArrayList();
         Connection con;
         
@@ -42,7 +42,7 @@ public class PersonDAO {
             while (rs.next()) {
                 char full_time = rs.getString("full_time").charAt(0);
                 boolean isFullTime = full_time == 'y';
-                personsList.add(new Person(
+                personsList.add(new Zoo(
                      rs.getInt("id"),
                      rs.getString("last_name"),
                      rs.getString("first_name"),
@@ -66,15 +66,15 @@ public class PersonDAO {
         return countryList;
     }
 */    
-    public static void update(Person actPerson) {
+    public static void update(Zoo actZoo) {
         String sql = "UPDATE persons SET "
-                + " first_name  = '" + actPerson.getFirstName() + "'"
-                + ", last_name  = '" + actPerson.getLastName() + "'"
-                + ", yob = " + actPerson.getYob()
-                + ", department = '" + actPerson.getDepartment() + "'"
-                + ", full_time = '" + (actPerson.isFullTime() ? 'y':'n') + "'"
-                + ", country_id = " + actPerson.getCountryId()
-                + " WHERE id = " + actPerson.getId();
+                + " first_name  = '" + actZoo.getFirstName() + "'"
+                + ", last_name  = '" + actZoo.getLastName() + "'"
+                + ", yob = " + actZoo.getYob()
+                + ", department = '" + actZoo.getDepartment() + "'"
+                + ", full_time = '" + (actZoo.isFullTime() ? 'y':'n') + "'"
+                + ", country_id = " + actZoo.getCountryId()
+                + " WHERE id = " + actZoo.getId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
         /*

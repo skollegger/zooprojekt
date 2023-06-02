@@ -4,13 +4,13 @@ package model;
  *
  * @author tc
  */
-public class Country {
+public class Tiere {
     private int id;
     private String country;
     private String countryCode;
     private int area;
 
-    public Country(int id, String country, String countryCode, int area) {
+    public Tiere(int id, String country, String countryCode, int area) {
         this.id = id;
         this.country = country;
         this.countryCode = countryCode;

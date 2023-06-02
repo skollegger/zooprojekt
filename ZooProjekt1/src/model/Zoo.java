@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Person {
+public class Zoo {
     private int id;
     private StringProperty lastNameProperty;
     private StringProperty firstNameProperty;
@@ -17,7 +17,7 @@ public class Person {
     private int countryId;
     private StringProperty countryProperty;
 
-    public Person(int id, String lastName, String firstName, int yob) {
+    public Zoo(int id, String lastName, String firstName, int yob) {
         this.id = id;
         this.lastNameProperty = new SimpleStringProperty (lastName);
         this.firstNameProperty = new SimpleStringProperty (firstName);
@@ -26,8 +26,8 @@ public class Person {
         this.department = "IT";
     }
 
-    public Person(int id, String lastName, String firstName, int yob, 
-            String department, boolean fullTime, int countryId, String country) {
+    public Zoo(int id, String lastName, String firstName, int yob,
+               String department, boolean fullTime, int countryId, String country) {
         this(id, lastName, firstName, yob);         //eigener Konstruktoraufruf
         this.department = department;
         //this.fullTimeProperty = new SimpleBooleanProperty(fullTime);
