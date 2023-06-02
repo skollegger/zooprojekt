@@ -30,11 +30,13 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 <<<<<<< HEAD
 import model.Zoo;
-import model.PersonDAO;
+import model.ZooDAO;
 =======
 import model.Person;
-import model.ZooDAO;
+<<<<<<< HEAD
 >>>>>>> 8503914369acd673098f0b127cb10c02db840a32
+=======
+>>>>>>> 2f18bbadc8fe3069bcf0b93b1547246ca9d2672e
 import personed.FXML_PersonedController;
 
 
@@ -71,7 +73,7 @@ public class FXMLDocumentController implements Initializable {
     //  Controls erzeugt wurden
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
-        //cbPersons.setItems(ZooDAO.getPersons());
+        //cbPersons.setItems(PersonDAO.getPersons());
         myPersonList = ZooDAO.getPersons();
         //ComboBox an die Liste binden
         cbPersons.itemsProperty().bind(listProperty);
@@ -114,7 +116,7 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("after Dialog: " + actZoo);
             myPersonList.set(inx, actZoo);
 
-            //cbPersons.setItems(ZooDAO.getPersons());
+            //cbPersons.setItems(PersonDAO.getPersons());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -145,7 +147,7 @@ public class FXMLDocumentController implements Initializable {
         //cbPersons.getItems().remove(actPerson);
         //??
         //cbPersons.getItems().add(actPerson);
-        //cbPersons.setItems(ZooDAO.getPersons());
+        //cbPersons.setItems(PersonDAO.getPersons());
         myPersonList.set(inx, actPerson);
 */
     }
