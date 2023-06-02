@@ -12,7 +12,7 @@ public class Zoo {
 
     public Zoo(int id, String name, String ort, Integer eintrittskosten,
                Date oeffnungszeiten, Date schliesszeiten) {
-        this.id = id;
+        this.Id = id;
         Name = name;
         Ort = ort;
         Eintrittskosten = eintrittskosten;
@@ -20,8 +20,8 @@ public class Zoo {
         Schliesszeiten = schliesszeiten;
     }
 
-    public void getId(int Id) {
-        this.Id = Id;
+    public void getId(int id) {
+        this.Id = id;
     }
 
     public String getName() {
