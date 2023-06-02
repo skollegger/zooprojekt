@@ -1,9 +1,6 @@
 package model;
 
-/**
- *
- * @author tc
- */
+
 public class Tiere {
     private int id;
     private String country;

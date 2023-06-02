@@ -1,12 +1,8 @@
 package model;
 
-import javafx.property.BooleanProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import java.property.StringProperty;
+import javafx.beans.property.*;
+
+import java.util.Date;
 
 public class Zoo {
     private int id;
@@ -16,13 +12,14 @@ public class Zoo {
     private Date Oeffnungszeiten;
     private Date Schliesszeiten;
 
-    public Zoo(int id, String lastName, String firstName, int yob) {
+    public Zoo(int id, StringProperty nameProperty, StringProperty ortProperty,
+               IntegerProperty eintrittskostenProperty, Date oeffnungszeiten, Date schliesszeiten) {
         this.id = id;
-        this.lastNameProperty = new SimpleStringProperty (lastName);
-        this.firstNameProperty = new SimpleStringProperty (firstName);
-        this.yobProperty = new SimpleIntegerProperty (yob);
-        this.fullTimeProperty = new SimpleBooleanProperty(false);
-        this.department = "IT";
+        NameProperty = nameProperty;
+        OrtProperty = ortProperty;
+        EintrittskostenProperty = eintrittskostenProperty;
+        Oeffnungszeiten = oeffnungszeiten;
+        Schliesszeiten = schliesszeiten;
     }
 
     public Zoo(int id, String lastName, String firstName, int yob,
