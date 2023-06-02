@@ -12,7 +12,7 @@ import util.DML_DAO;
  *
  * @author tc
  */
-public class ZooDAO {
+public class PersonDAO {
 /*
     private static Person []persons = {
         new Person(1, "Agg", "Stefan", 1984, "IT", true, 1),

@@ -29,7 +29,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Person;
-import model.ZooDAO;
+import model.PersonDAO;
 import personed.FXML_PersonedController;
 
 
@@ -66,8 +66,8 @@ public class FXMLDocumentController implements Initializable {
     //  Controls erzeugt wurden
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
-        //cbPersons.setItems(ZooDAO.getPersons());
-        myPersonList = ZooDAO.getPersons();
+        //cbPersons.setItems(PersonDAO.getPersons());
+        myPersonList = PersonDAO.getPersons();
         //ComboBox an die Liste binden
         cbPersons.itemsProperty().bind(listProperty);
         listProperty.setValue(myPersonList);
@@ -109,7 +109,7 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("after Dialog: " + actPerson);
             myPersonList.set(inx, actPerson);
 
-            //cbPersons.setItems(ZooDAO.getPersons());
+            //cbPersons.setItems(PersonDAO.getPersons());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -140,7 +140,7 @@ public class FXMLDocumentController implements Initializable {
         //cbPersons.getItems().remove(actPerson);
         //??
         //cbPersons.getItems().add(actPerson);
-        //cbPersons.setItems(ZooDAO.getPersons());
+        //cbPersons.setItems(PersonDAO.getPersons());
         myPersonList.set(inx, actPerson);
 */
     }
