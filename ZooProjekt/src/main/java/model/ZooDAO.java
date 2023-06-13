@@ -43,8 +43,8 @@ public class ZooDAO {
                 + ", Ort  = '" + actZoo.getOrt() + "'"
                 + ", Eintrittskosten = " + actZoo.getEintrittskosten()  + "'"
                 + ", Oeffnungszeiten = '" + actZoo.getOeffnungszeiten() + "'"
-                + ", Schliesszeiten = '" + (actZoo.getSchliesszeiten() ? 'y':'n') + "'"
-                + " WHERE id = " + actZoo.getZooId();
+                + ", Schliesszeiten = '" + actZoo.getSchliesszeiten() + "'"
+                + " WHERE id = " + actZoo.getZId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
         /*
