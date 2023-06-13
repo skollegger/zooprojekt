@@ -3,6 +3,7 @@ package model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import util.DBConnector;
+import util.DML_DAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -18,7 +19,7 @@ public class TiereDAO {
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT t.* FROM Tiere t";
+            String sql = "SELECT t.* FROM tiere t";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
@@ -31,13 +32,11 @@ public class TiereDAO {
                      rs.getInt("Gehege"),
                      rs.getDate("Futterzeit")
                 );
-                Zoo.add(tiere);
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        
-        return tiere;
+        return tiereList;
     }
 
     public static String getTiereById (int id) {
@@ -56,5 +55,18 @@ public class TiereDAO {
             System.err.println(ex.getMessage());
         }
         return Tiere;
+    }
+
+    public static void update(Tiere actTiere) {
+        String sql = "UPDATE Tiere SET "
+                + " Name  = '" + actTiere.getName() + "'"
+                + ", Art  = '" + actTiere.getArt() + "'"
+                + ", Alter = " + actTiere.getAlter() + "'"
+                + ", Geschlecht = '" + actTiere.getGeschlecht() + "'"
+                + ", Gehege = " + actTiere.getGehege()
+                + ", Futterzeit = '" + actTiere.getFutterzeit() + "'"
+                + " WHERE id = " + actTiere.getTId();
+        System.out.println("sql: " + sql);
+        DML_DAO.executeDML(sql);
     }
 }
