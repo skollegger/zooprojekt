@@ -3,13 +3,14 @@ package model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import util.DBConnector;
+import util.DML_DAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MitarbeiterDAO {
-    public static ObservableList<Mitarbeiter> getMitarbeiter () {
+    public static ObservableList<Mitarbeiter> getMitarbeiter() {
         ObservableList<Mitarbeiter> mitarbeiterList =
                 FXCollections.observableArrayList();
         Connection con;
@@ -29,15 +30,15 @@ public class MitarbeiterDAO {
                         rs.getString("Strasse"),
                         rs.getInt("HausNr"),
                         rs.getDate("Geburtstag")
-                );
+                ));
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        Zoo.add(mitarbeiter);
 
         return mitarbeiterList;
     }
+
     public static void update(Mitarbeiter actMitarbeiter) {
         String sql = "UPDATE Mitarbeiter SET "
                 + " Vorname  = '" + actMitarbeiter.getVorname() + "'"
@@ -45,8 +46,9 @@ public class MitarbeiterDAO {
                 + ", Plz = " + actMitarbeiter.getPlz() + "'"
                 + ", Strasse = '" + actMitarbeiter.getStrasse() + "'"
                 + ", HausNr = " + actMitarbeiter.getHausNr()
-                + ", Geburtstag = '" + (actMitarbeiter.getGeburtstag() ? 'y' : 'n') + "'"
+                + ", Geburtstag = '" + actMitarbeiter.getGeburtstag() + "'"
                 + " WHERE id = " + actMitarbeiter.getMId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
     }
+}

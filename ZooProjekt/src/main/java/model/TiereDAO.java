@@ -11,14 +11,14 @@ import java.sql.SQLException;
 
 public class TiereDAO {
     public static ObservableList<Tiere> getTiere () {
-            ObservableList<Tiere> Zoo =
+            ObservableList<Tiere> tiereList =
                 FXCollections.observableArrayList();
         Connection con;
         Tiere tiere;
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT * FROM Tiere";
+            String sql = "SELECT t.* FROM Tiere t";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
@@ -37,7 +37,7 @@ public class TiereDAO {
             System.err.println(ex.getMessage());
         }
         
-        return Tiere;
+        return tiere;
     }
 
     public static String getTiereById (int id) {
