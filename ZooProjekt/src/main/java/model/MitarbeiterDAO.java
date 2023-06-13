@@ -38,7 +38,23 @@ public class MitarbeiterDAO {
 
         return mitarbeiterList;
     }
+    public static String getMitarbeiterById (int id) {
+        Connection con;
+        String Mitarbeiter = "no Mitarbeiter";
 
+        try {
+            con = DBConnector.connect();
+            String sql = "SELECT m.* FROM Mitarbeiter m Where id = " + id;
+            ResultSet rs = con.createStatement().executeQuery(sql);
+
+            rs.first();
+            Mitarbeiter = rs.getString("Mitarbeiter");
+        }
+        catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return Mitarbeiter;
+    }
     public static void update(Mitarbeiter actMitarbeiter) {
         String sql = "UPDATE Mitarbeiter SET "
                 + " Vorname  = '" + actMitarbeiter.getVorname() + "'"
@@ -50,5 +66,22 @@ public class MitarbeiterDAO {
                 + " WHERE id = " + actMitarbeiter.getMId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
+        /*
+        for (Mitarbeiter m : Mitarbeiter) {
+            if (m.getMId() == actMitarbeiter.getMId()) {
+                m.setVorname(actMitarbeiter.getVorname());
+                m.setNachname(actMitarbeiter.getNachname());
+                m.setPlz(actMitarbeiter.getPlz());
+                m.setStrasse(actMitarbeiter.getStrasse());
+                m.setHausNr(actMitarbeiter.getHausNr());
+                m.setGeburtstag(actMitarbeiter.getGeburtstag());
+                m.setZId(actMitarbeiter.getZId());
+                //System.out.println("set coutryId: " + p.getCountryId());
+                break;
+            }
+        }
+        for (Mitarbeiter m : Mitarbeiter)
+              System.out.println(m);
+    */
     }
 }

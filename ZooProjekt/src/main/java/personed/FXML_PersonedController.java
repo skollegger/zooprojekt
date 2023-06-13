@@ -6,10 +6,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import model.Tiere;
 import model.TiereDAO;
+import model.Mitarbeiter;
+import model.MitarbeiterDAO;
 import model.Zoo;
 import model.ZooDAO;
 
+import java.lang.foreign.ValueLayout;
 import java.net.URL;
+import java.sql.Time;
 import java.util.ResourceBundle;
 
 
@@ -17,9 +21,15 @@ public class FXML_PersonedController implements Initializable {
     private Zoo actZoo;
     
     @FXML
-    private TextField tfLastName;
+    private TextField tfName;
     @FXML
-    private TextField tfFirstName;
+    private TextField tfOrt;
+    @FXML
+    private Spinner<Integer> tfEintrittskosten;
+    @FXML
+    private Spinner<Time> tfOeffnungszeiten;
+    @FXML
+    private Spinner<Time> tfSchliesszeiten;
     @FXML
     private MenuItem miSave;
     @FXML
@@ -27,15 +37,7 @@ public class FXML_PersonedController implements Initializable {
     @FXML
     private RadioButton rbIt;
     @FXML
-    private ToggleGroup tgDepartments;
-    @FXML
-    private RadioButton rbSales;
-    @FXML
-    private RadioButton rbFinance;
-    @FXML
-    private CheckBox chbFullTime;
-    @FXML
-    private ComboBox<Tiere> cbCountries;
+    private ComboBox<Tiere> cbTiere;
 
 
     @Override
@@ -43,34 +45,25 @@ public class FXML_PersonedController implements Initializable {
         spYob.setValueFactory(
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(1950,2020)
         );
-        cbCountries.setItems(TiereDAO.getCountries());
+        cbTiere.setItems(TiereDAO.getTiere());
     }    
 
     @FXML
     private void handleMiSaveAction(ActionEvent event) {
-        actZoo.setLastName(tfLastName.getText());
-        actZoo.setFirstName(tfFirstName.getText());
-        actZoo.setYob(spYob.getValue());
-        actZoo.setDepartment(((RadioButton)tgDepartments.getSelectedToggle()).getText());
-        actZoo.setFullTime(chbFullTime.isSelected());
-        actZoo.setCountryId(cbCountries.getSelectionModel().getSelectedItem().getId());
-        actZoo.setCountry(TiereDAO.getCountryById(actZoo.getCountryId()));
+        actZoo.setName(tfName.getText());
+        actZoo.setOrt(tfOrt.getText());
+        actZoo.setEintrittskosten(Integer.valueOf(tfEintrittskosten.getId()));
+        actZoo.setOeffnungszeiten(tfOeffnungszeiten.getValue());
+        actZoo.setSchliesszeiten(tfSchliesszeiten.getValue());
         ZooDAO.update (actZoo);
     }
     
-    public void setPerson (Zoo actZoo) {
+    public void setActZoo (Zoo actZoo) {
         this.actZoo = actZoo;
-        tfLastName.setText(actZoo.getLastName());
-        tfFirstName.setText(actZoo.getFirstName());
-        spYob.getValueFactory().setValue(actZoo.getYob());
+        tfName.setText(actZoo.getName());
+        tfOrt.setText(actZoo.getOrt());
+        tfOeffnungszeiten.setValueFactory(actZoo.getOeffnungszeiten());
+        tfSchliesszeiten.setValueFactory(actZoo.getSchliesszeiten());
         rbIt.setSelected(true);  //Defaultauswahl
-        for (Toggle rb : tgDepartments.getToggles()) {
-            if (((RadioButton)rb).getText().equals(actZoo.getDepartment()))
-                tgDepartments.selectToggle(rb);
-        }
-        chbFullTime.setSelected(actZoo.isFullTime());
-        for (Tiere tiere : cbCountries.getItems())
-            if (tiere.getId() == actZoo.getCountryId())
-                cbCountries.getSelectionModel().select(tiere);
     }
 }

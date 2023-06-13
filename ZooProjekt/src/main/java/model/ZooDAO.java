@@ -36,6 +36,23 @@ public class ZooDAO {
         }
         return zooList;
     }
+    public static String getZooById (int id) {
+        Connection con;
+        String Zoo = "no Zoo";
+
+        try {
+            con = DBConnector.connect();
+            String sql = "SELECT m.* FROM Zoo m Where id = " + id;
+            ResultSet rs = con.createStatement().executeQuery(sql);
+
+            rs.first();
+            Zoo = rs.getString("Zoo");
+        }
+        catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return Zoo;
+    }
 
     public static void update(Zoo actZoo) {
         String sql = "UPDATE persons SET "
