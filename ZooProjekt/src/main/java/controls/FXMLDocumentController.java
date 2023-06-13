@@ -31,7 +31,7 @@ public class FXMLDocumentController implements Initializable {
     private String []departments = {"IT", "Sales", "Finance"};
     //private RadioButton []radios = new RadioButton[departments.length];
     //private ToggleGroup deptRadioGrp = new ToggleGroup();
-    private ObservableList<Zoo> myPersonList;
+    private ObservableList<Zoo> zooList;
     private ListProperty<Zoo> listProperty = new SimpleListProperty();
 
     @FXML
@@ -59,10 +59,10 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
         //cbPersons.setItems(PersonDAO.getPersons());
-        myPersonList = ZooDAO.getPersons();
+        zooList = ZooDAO.getZoo();
         //ComboBox an die Liste binden
         cbPersons.itemsProperty().bind(listProperty);
-        listProperty.setValue(myPersonList);
+        listProperty.setValue(zooList);
         
         //Spalten der TableView an die Member binden
         tcLastname.setCellValueFactory(new PropertyValueFactory("lastName"));
@@ -70,7 +70,7 @@ public class FXMLDocumentController implements Initializable {
         tcYob.setCellValueFactory(new PropertyValueFactory("yob"));
         tcFullTime.setCellValueFactory(new PropertyValueFactory("fullTime"));        
         tcCountry.setCellValueFactory(new PropertyValueFactory("country"));
-        tvPersons.setItems(myPersonList);
+        tvPersons.setItems(zooList);
     }
 
     @FXML
@@ -86,20 +86,20 @@ public class FXMLDocumentController implements Initializable {
         int inx = cbPersons.getSelectionModel().getSelectedIndex();
         if (inx == -1)
             return;
-        actZoo = myPersonList.get(inx);
+        actZoo = zooList.get(inx);
         
         try {
             FXMLLoader loader = new FXMLLoader();                   //Loader Objekt
             loader.setLocation(getClass().getResource("/personed/FXML_Personed.fxml"));
             Parent root = loader.load();                            //Wurzelcontrol
             FXML_PersonedController ctrl = loader.getController();  //ref. Controlerobj
-            ctrl.setPerson(actZoo);
+            ctrl.setActZoo(actZoo);
             Stage stage = new Stage();                              //neue Bühne
             stage.initModality(Modality.WINDOW_MODAL);              //im Vordergrund
             stage.setScene(new Scene(root));
             stage.showAndWait();                                    //Anzeige
             System.out.println("after Dialog: " + actZoo);
-            myPersonList.set(inx, actZoo);
+            zooList.set(inx, actZoo);
 
             //cbPersons.setItems(PersonDAO.getPersons());
         } catch (IOException ex) {
@@ -127,7 +127,7 @@ public class FXMLDocumentController implements Initializable {
         int inx = cbPersons.getSelectionModel().getSelectedIndex();
         if (inx == -1)
             return;
-        actZoo = myPersonList.get(inx);
+        actZoo = zooList.get(inx);
 /*        
         //cbPersons.getItems().remove(actPerson);
         //??

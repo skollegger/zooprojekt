@@ -38,6 +38,8 @@ public class FXML_PersonedController implements Initializable {
     private RadioButton rbIt;
     @FXML
     private ComboBox<Tiere> cbTiere;
+    @FXML
+    private ComboBox<Mitarbeiter> cbMitarbeiter;
 
 
     @Override
