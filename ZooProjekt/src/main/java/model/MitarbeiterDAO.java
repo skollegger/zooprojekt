@@ -34,6 +34,7 @@ public class MitarbeiterDAO {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+        Zoo.add(mitarbeiter);
 
         return mitarbeiterList;
     }
@@ -45,7 +46,7 @@ public class MitarbeiterDAO {
                 + ", Strasse = '" + actMitarbeiter.getStrasse() + "'"
                 + ", HausNr = " + actMitarbeiter.getHausNr()
                 + ", Geburtstag = '" + (actMitarbeiter.getGeburtstag() ? 'y' : 'n') + "'"
-                + " WHERE id = " + actMitarbeiter.getId();
+                + " WHERE id = " + actMitarbeiter.getMId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
     }

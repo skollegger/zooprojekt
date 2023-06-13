@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 public class Mitarbeiter {
-    private int id;
+    private int MId;
     private String Vorname;
     private String Nachname;
     private int Plz;
@@ -12,7 +12,7 @@ public class Mitarbeiter {
     private Date Geburtstag;
 
     public Mitarbeiter(int id, String Vorname, String Nachname, int Plz, String Strasse, int HausNr, Date Geburtstag) {
-        this.id = id;
+        this.MId = id;
         Vorname = Vorname;
         Nachname = Nachname;
         Plz = Plz;
@@ -21,8 +21,8 @@ public class Mitarbeiter {
         Geburtstag = Geburtstag;
     }
 
-    public int getId() {
-        return id;
+    public int getMId() {
+        return MId;
     }
 
     public String getVorname() {

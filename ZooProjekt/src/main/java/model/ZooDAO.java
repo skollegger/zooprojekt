@@ -11,35 +11,18 @@ import java.sql.SQLException;
 
 
 public class ZooDAO {
-/*
-    private static Person []persons = {
-        new Person(1, "Agg", "Stefan", 1984, "IT", true, 1),
-        new Person(2, "Boandl", "Rene", 1985, "Sales", false, 2),
-        new Person(3, "Krichmayer", "Vincent", 1990, "Finance", true, 1)
-    };
-*/
-/*    
-    private static Country []countries = {
-        new Country(1, "Österreich", "AUT"),
-        new Country(2, "Deutschland", "DE"),
-        new Country(3, "Italien", "IT"),
-    };
-*/
-    
     public static ObservableList<Zoo> getZoo () {
-        ObservableList<Zoo> ZooList =
+        ObservableList<Zoo> zooList =
                 FXCollections.observableArrayList();
         Connection con;
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT * From  Zoo";
+            String sql = "SELECT z.* From  Zoo z";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
-                char full_time = rs.getString("full_time").charAt(0);
-                boolean isFullTime = full_time == 'y';
-                ZooList.add(new Zoo(
+                zooList.add(new Zoo(
                      rs.getInt("Id"),
                      rs.getString("Name"),
                      rs.getString("Ort"),
@@ -51,16 +34,9 @@ public class ZooDAO {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        
-        return ZooList;
+        return zooList;
     }
-/*
-    public static ObservableList<Country> getCountries () {
-        ObservableList<Country> countryList = 
-                FXCollections.observableArrayList(countries);
-        return countryList;
-    }
-*/    
+
     public static void update(Zoo actZoo) {
         String sql = "UPDATE persons SET "
                 + " Name  = '" + actZoo.getName() + "'"
@@ -68,7 +44,7 @@ public class ZooDAO {
                 + ", Eintrittskosten = " + actZoo.getEintrittskosten()  + "'"
                 + ", Oeffnungszeiten = '" + actZoo.getOeffnungszeiten() + "'"
                 + ", Schliesszeiten = '" + (actZoo.getSchliesszeiten() ? 'y':'n') + "'"
-                + " WHERE id = " + actZoo.getId();
+                + " WHERE id = " + actZoo.getZooId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
         /*

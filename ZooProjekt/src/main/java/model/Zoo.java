@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 public class Zoo {
-    private int Id;
+    private int ZooId;
     private String Name;
     private String Ort;
     private Integer Eintrittskosten;
@@ -12,7 +12,7 @@ public class Zoo {
 
     public Zoo(int id, String name, String ort, Integer eintrittskosten,
                Date oeffnungszeiten, Date schliesszeiten) {
-        this.Id = id;
+        this.ZooId = id;
         Name = name;
         Ort = ort;
         Eintrittskosten = eintrittskosten;
@@ -20,8 +20,8 @@ public class Zoo {
         Schliesszeiten = schliesszeiten;
     }
 
-    public void getId(int id) {
-        this.Id = id;
+    public void getZooId(int id) {
+        this.ZooId = id;
     }
 
     public String getName() {
