@@ -25,10 +25,6 @@ public class Mitarbeiter {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getVorname() {
         return Vorname;
     }

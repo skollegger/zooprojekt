@@ -10,18 +10,18 @@ import java.sql.SQLException;
 
 public class MitarbeiterDAO {
     public static ObservableList<Mitarbeiter> getMitarbeiter () {
-        ObservableList<Mitarbeiter> Zoo =
+        ObservableList<Mitarbeiter> mitarbeiterList =
                 FXCollections.observableArrayList();
         Connection con;
         Mitarbeiter mitarbeiter;
 
         try {
             con = DBConnector.connect();
-            String sql = "SELECT * FROM Mitarbeiter";
+            String sql = "SELECT m.* FROM mitarbeiter m";
             ResultSet rs = con.createStatement().executeQuery(sql);
 
             while (rs.next()) {
-                mitarbeiter = new Mitarbeiter(
+                mitarbeiterList.add(new Mitarbeiter(
                         rs.getInt("id"),
                         rs.getString("Vorname"),
                         rs.getString("Nachname"),
@@ -30,30 +30,22 @@ public class MitarbeiterDAO {
                         rs.getInt("HausNr"),
                         rs.getDate("Geburtstag")
                 );
-                Zoo.add(mitarbeiter);
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
 
-        return Zoo;
+        return mitarbeiterList;
     }
-
-    public static String getMitarbeiterById (int id) {
-        Connection con;
-        String Mitarbeiter = "no Mitarbeiter";
-
-        try {
-            con = DBConnector.connect();
-            String sql = "SELECT * FROM countries Where id = " + id;
-            ResultSet rs = con.createStatement().executeQuery(sql);
-
-            rs.first();
-            Mitarbeiter = rs.getString("country");
-        }
-        catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-        return Mitarbeiter;
+    public static void update(Mitarbeiter actMitarbeiter) {
+        String sql = "UPDATE Mitarbeiter SET "
+                + " Vorname  = '" + actMitarbeiter.getVorname() + "'"
+                + ", Nachname  = '" + actMitarbeiter.getNachname() + "'"
+                + ", Plz = " + actMitarbeiter.getPlz() + "'"
+                + ", Strasse = '" + actMitarbeiter.getStrasse() + "'"
+                + ", HausNr = " + actMitarbeiter.getHausNr()
+                + ", Geburtstag = '" + (actMitarbeiter.getGeburtstag() ? 'y' : 'n') + "'"
+                + " WHERE id = " + actMitarbeiter.getId();
+        System.out.println("sql: " + sql);
+        DML_DAO.executeDML(sql);
     }
-}
