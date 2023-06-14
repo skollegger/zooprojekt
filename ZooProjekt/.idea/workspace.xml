@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1685698181259</updated>
       <workItem from="1685698182607" duration="2215000" />
+      <workItem from="1686754290982" duration="1436000" />
     </task>
     <servers />
   </component>
