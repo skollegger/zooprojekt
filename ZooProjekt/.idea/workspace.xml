@@ -6,8 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/controllsdemo/reservationmenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/controllsdemo/reservationmenu.fxml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/personed/FXML_PersonedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_PersonedController.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="XML Properties File" />
       </list>
     </option>
   </component>
