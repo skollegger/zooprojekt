@@ -18,7 +18,7 @@ public class ZooDAO {
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT z.* From  Zoo z";
+            String sql = "SELECT z.*, t.TId, m.MId From  Zoo z, Tiere t, Mitarbeiter m";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
@@ -28,7 +28,12 @@ public class ZooDAO {
                      rs.getString("Ort"),
                      rs.getInt("Eintrittskosten"),
                      rs.getTime("Oeffnungszeiten"),
-                     rs.getTime("Schliesszeiten"))
+                     rs.getTime("Schliesszeiten"),
+                     rs.getString("department"),
+                     rs.getString("Tiere"),
+                     rs.getString("Mitarbeiter"),
+                     rs.getInt("TierId"),
+                     rs.getInt("MitarbeiterId"))
                 );
             }
         } catch (SQLException ex) {

@@ -10,10 +10,16 @@ public class Zoo {
     private Time Oeffnungszeiten;
     private Time Schliesszeiten;
     private String department;
+    private int TId;
+    private int MId;
+    private String mitarbeiter;
+
+    private String tiere;
 
 
     public Zoo(int id, String name, String ort, Integer eintrittskosten,
-               Time oeffnungszeiten, Time schliesszeiten) {
+               Time oeffnungszeiten, Time schliesszeiten,
+               String department, String tiere, String mitarbeiter, int TId, int MId) {
         this.ZId = id;
         Name = name;
         Ort = ort;
@@ -21,6 +27,11 @@ public class Zoo {
         Oeffnungszeiten = oeffnungszeiten;
         Schliesszeiten = schliesszeiten;
         this.department = "Graz";
+        this.TId = TId;
+        this.MId = MId;
+        this.mitarbeiter = new String(mitarbeiter);
+        this.tiere = new String(tiere);
+
     }
 
     public Zoo(int ZId, String name, String ort, Integer eintrittskosten,
@@ -80,8 +91,13 @@ public class Zoo {
     public void setDepartment(String department) {
         this.department = department;
     }
-
     public String getDepartment() {
         return department;
+    }
+    public int getTId() {
+        return TId;
+    }
+    public int getMID(){
+        return MId;
     }
 }
