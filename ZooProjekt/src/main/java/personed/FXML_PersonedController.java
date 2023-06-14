@@ -1,5 +1,6 @@
 package personed;
 
+import com.sun.javafx.charts.Legend;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,7 +12,6 @@ import model.MitarbeiterDAO;
 import model.Zoo;
 import model.ZooDAO;
 
-import java.lang.foreign.ValueLayout;
 import java.net.URL;
 import java.sql.Time;
 import java.util.ResourceBundle;
@@ -23,32 +23,28 @@ public class FXML_PersonedController implements Initializable {
     @FXML
     private TextField tfName;
     @FXML
-    private TextField tfOrt;
-    @FXML
-    private Spinner<Integer> tfEintrittskosten;
-    @FXML
-    private Spinner<Time> tfOeffnungszeiten;
-    @FXML
-    private Spinner<Time> tfSchliesszeiten;
-    @FXML
     private MenuItem miSave;
     @FXML
-    private Spinner<Integer> spYob;
+    private ToggleGroup tgDepartments;
     @FXML
-    private RadioButton rbIt;
+    private RadioButton rbWien;
     @FXML
-    private ComboBox<Tiere> cbTiere;
+    private RadioButton rbGraz;
     @FXML
-    private ComboBox<Mitarbeiter> cbMitarbeiter;
+    private RadioButton rbSalzburg;
+    @FXML
+    private Spinner spOeffnungszeiten;
+    @FXML
+    private Spinner spSchliesszeiten;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        spYob.setValueFactory(
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(1950,2020)
+        spOeffnungszeiten.setValueFactory(
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(6,9)
         );
-        cbTiere.setItems(TiereDAO.getTiere());
-    }    
+        cbZoo.setItems(TiereDAO.getTiere());
+    }
 
     @FXML
     private void handleMiSaveAction(ActionEvent event) {

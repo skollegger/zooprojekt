@@ -76,7 +76,5 @@ public class Mitarbeiter {
 @Override
 public String toString() {
     return country;
-}
-
-*/
+}*/
 }

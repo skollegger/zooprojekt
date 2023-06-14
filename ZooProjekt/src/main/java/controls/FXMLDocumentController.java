@@ -28,62 +28,56 @@ import java.util.ResourceBundle;
 
 public class FXMLDocumentController implements Initializable {
     private Zoo actZoo;
-    private String []departments = {"IT", "Sales", "Finance"};
-    //private RadioButton []radios = new RadioButton[departments.length];
-    //private ToggleGroup deptRadioGrp = new ToggleGroup();
     private ObservableList<Zoo> zooList;
     private ListProperty<Zoo> listProperty = new SimpleListProperty();
 
     @FXML
-    private ComboBox<Zoo> cbPersons;
+    private ComboBox<Zoo> cbZoo;
     @FXML
     private MenuItem miEdit;
     @FXML
     private MenuItem miShow;
     @FXML
-    private TableView<Zoo> tvPersons;
+    private TableView<Zoo> tvZoo;
     @FXML               //Zeilenobjektklasse, Memberklasse
-    private TableColumn<Zoo, String> tcLastname;
+    private TableColumn<Zoo, String> tcName;
     @FXML
-    private TableColumn<Zoo, String> tcFirstname;
+    private TableColumn<Zoo, String> tcOrt;
     @FXML
-    private TableColumn<Zoo, Integer> tcYob;
+    private TableColumn<Zoo, Integer> tcEintrittskosten;
     @FXML
-    private TableColumn<Zoo, Boolean> tcFullTime;
+    private TableColumn<Zoo, Boolean> tcOeffnungszeiten;
     @FXML
-    private TableColumn<Zoo, String> tcCountry;
-    
-    
-    //Zeitpunkt: Öffnen der GUI, nachdem alle
-    //  Controls erzeugt wurden
+    private TableColumn<Zoo, String> tcSchliesszeiten;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
-        //cbPersons.setItems(PersonDAO.getPersons());
+        cbZoo.setItems(ZooDAO.getZoo()); //war ausgeblendet?
         zooList = ZooDAO.getZoo();
         //ComboBox an die Liste binden
-        cbPersons.itemsProperty().bind(listProperty);
+        cbZoo.itemsProperty().bind(listProperty);
         listProperty.setValue(zooList);
         
         //Spalten der TableView an die Member binden
-        tcLastname.setCellValueFactory(new PropertyValueFactory("lastName"));
-        tcFirstname.setCellValueFactory(new PropertyValueFactory("firstName"));
-        tcYob.setCellValueFactory(new PropertyValueFactory("yob"));
-        tcFullTime.setCellValueFactory(new PropertyValueFactory("fullTime"));        
-        tcCountry.setCellValueFactory(new PropertyValueFactory("country"));
-        tvPersons.setItems(zooList);
+        tcName.setCellValueFactory(new PropertyValueFactory("Name"));
+        tcOrt.setCellValueFactory(new PropertyValueFactory("Ort"));
+        tcEintrittskosten.setCellValueFactory(new PropertyValueFactory("Eintrittskosten"));
+        tcOeffnungszeiten.setCellValueFactory(new PropertyValueFactory("Oeffnungszeiten"));
+        tcSchliesszeiten.setCellValueFactory(new PropertyValueFactory("Schliesszeiten"));
+        tvZoo.setItems(zooList);
     }
 
-    @FXML
+    @Deprecated
     private void handleCbPersonsAction(ActionEvent event) {
         //merke den aktuellen Datensatz
-        actZoo = cbPersons.getSelectionModel().getSelectedItem();
+        actZoo = cbZoo.getSelectionModel().getSelectedItem();
         //getSelectedItem liefert eine Referenz auf ein Personenobjekt !!!
         //lblName.setText(cbPersons.getSelectionModel().getSelectedItem().getLastName());
     }
 
     @FXML
     private void handleMiEditAction(ActionEvent event) {
-        int inx = cbPersons.getSelectionModel().getSelectedIndex();
+        int inx = cbZoo.getSelectionModel().getSelectedIndex();
         if (inx == -1)
             return;
         actZoo = zooList.get(inx);
@@ -121,24 +115,28 @@ public class FXMLDocumentController implements Initializable {
     }
 
     private void handleMiSaveAction(ActionEvent event) {
-        //if (actPerson == null)
+        //if (actZoo == null)
         //    return;
         //welcher Eintrag wurde selektiert (-1 falls keiner)
-        int inx = cbPersons.getSelectionModel().getSelectedIndex();
+        int inx = cbZoo.getSelectionModel().getSelectedIndex();
         if (inx == -1)
             return;
         actZoo = zooList.get(inx);
-/*        
-        //cbPersons.getItems().remove(actPerson);
+
+        cbZoo.getItems().remove(actZoo);
         //??
-        //cbPersons.getItems().add(actPerson);
-        //cbPersons.setItems(PersonDAO.getPersons());
-        myPersonList.set(inx, actPerson);
-*/
+        cbZoo.getItems().add(actZoo);
+        cbZoo.setItems(ZooDAO.getZoo());
+        zooList.set(inx, actZoo);
+
     }
 
     @FXML
     private void handleMiShowAction(ActionEvent event) {
+    }
+
+    @FXML
+    public void handleCbZooAction(ActionEvent actionEvent) {
     }
 }
        /*

@@ -27,8 +27,8 @@ public class ZooDAO {
                      rs.getString("Name"),
                      rs.getString("Ort"),
                      rs.getInt("Eintrittskosten"),
-                     rs.getDate("Oeffnungszeiten"),
-                     rs.getDate("Schliesszeiten"))
+                     rs.getTime("Oeffnungszeiten"),
+                     rs.getTime("Schliesszeiten"))
                 );
             }
         } catch (SQLException ex) {
@@ -42,7 +42,7 @@ public class ZooDAO {
 
         try {
             con = DBConnector.connect();
-            String sql = "SELECT m.* FROM Zoo m Where id = " + id;
+            String sql = "SELECT z.* FROM Zoo z Where id = " + id;
             ResultSet rs = con.createStatement().executeQuery(sql);
 
             rs.first();

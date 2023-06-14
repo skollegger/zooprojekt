@@ -1,17 +1,17 @@
 package model;
 
-import java.util.Date;
+import java.sql.Time;
 
 public class Zoo {
     private int ZId;
     private String Name;
     private String Ort;
     private Integer Eintrittskosten;
-    private Date Oeffnungszeiten;
-    private Date Schliesszeiten;
+    private Time Oeffnungszeiten;
+    private Time Schliesszeiten;
 
     public Zoo(int id, String name, String ort, Integer eintrittskosten,
-               Date oeffnungszeiten, Date schliesszeiten) {
+               Time oeffnungszeiten, Time schliesszeiten) {
         this.ZId = id;
         Name = name;
         Ort = ort;
@@ -20,8 +20,8 @@ public class Zoo {
         Schliesszeiten = schliesszeiten;
     }
 
-    public void getZId(int id) {
-        this.ZId = id;
+    public int getZId() {
+        return ZId;
     }
 
     public String getName() {
@@ -48,19 +48,18 @@ public class Zoo {
         Eintrittskosten = eintrittskosten;
     }
 
-    public Date getOeffnungszeiten() {
+    public Time getOeffnungszeiten() {
         return Oeffnungszeiten;
     }
-
-    public void setOeffnungszeiten(Date oeffnungszeiten) {
+    public void setOeffnungszeiten(Time oeffnungszeiten) {
         Oeffnungszeiten = oeffnungszeiten;
     }
 
-    public Date getSchliesszeiten() {
+    public Time getSchliesszeiten() {
         return Schliesszeiten;
     }
 
-    public void setSchliesszeiten(Date schliesszeiten) {
+    public void setSchliesszeiten(Time schliesszeiten) {
         Schliesszeiten = schliesszeiten;
     }
 }
