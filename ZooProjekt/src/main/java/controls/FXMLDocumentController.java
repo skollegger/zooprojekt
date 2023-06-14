@@ -9,10 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -31,14 +28,6 @@ public class FXMLDocumentController implements Initializable {
     private ObservableList<Zoo> zooList;
     private ListProperty<Zoo> listProperty = new SimpleListProperty();
 
-    @FXML
-    private ComboBox<Zoo> cbZoo;
-    @FXML
-    private MenuItem miEdit;
-    @FXML
-    private MenuItem miShow;
-    @FXML
-    private TableView<Zoo> tvZoo;
     @FXML               //Zeilenobjektklasse, Memberklasse
     private TableColumn<Zoo, String> tcName;
     @FXML
@@ -49,6 +38,10 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn<Zoo, Boolean> tcOeffnungszeiten;
     @FXML
     private TableColumn<Zoo, String> tcSchliesszeiten;
+    @FXML
+    private TableView tvZoo;
+    @FXML
+    private ChoiceBox cbZoo;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
@@ -68,14 +61,13 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @Deprecated
-    private void handleCbPersons(ActionEvent event) {
+    private void handleCbTiere(ActionEvent event) {
         //merke den aktuellen Datensatz
-        actZoo = cbZoo.getSelectionModel().getSelectedItem();
-        //getSelectedItem liefert eine Referenz auf ein Personenobjekt !!!
-        //lblName.setText(cbPersons.getSelectionModel().getSelectedItem().getLastName());
+        actZoo = (Zoo) cbZoo.getSelectionModel().getSelectedItem();
+        //getSelectedItem liefert eine Referenz auf ein Zooobjekt !!!
+        //lblName.setText(cbZoo.getSelectionModel().getSelectedItem().getName());
     }
-
-    @FXML
+    @Deprecated
     private void handleMiEditAction(ActionEvent event) {
         int inx = cbZoo.getSelectionModel().getSelectedIndex();
         if (inx == -1)
@@ -99,20 +91,9 @@ public class FXMLDocumentController implements Initializable {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        //lade die Textfelder mit den Personendaten
-       /* for (int i = 0; i < radios.length; i++)
-            if (actZoo.getDepartment().equals(departments[i]))
-                radios[i].setSelected(true);
-        if (actZoo.getDepartment().equals("Wien"))
-            rbWien.setSelected(true);
-        else if(actZoo.getDepartment().equals("Graz"))
-            rbGraz.setSelected(true);
-        else if(actZoo.getDepartment().equals("Salzburg"))
-            rbSalzburg.setSelected(true); */
-        //tfYob.setText("" + actPerson.getYob());
     }
 
-    private void handleMiSaveAction(ActionEvent event) {
+    private void handleOnActionSave(ActionEvent event) {
         //if (actZoo == null)
         //    return;
         //welcher Eintrag wurde selektiert (-1 falls keiner)
@@ -127,11 +108,11 @@ public class FXMLDocumentController implements Initializable {
         zooList.set(inx, actZoo);
     }
 
-    @FXML
+    @Deprecated
     private void handleMiShowAction(ActionEvent event) {
     }
 
-    @FXML
+    @Deprecated
     public void handleCbZooAction(ActionEvent actionEvent) {
     }
 }

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 
 public class TiereDAO {
-    public static ObservableList<Tiere> getTiere () {
+    public static ObservableList<Tiere> getTiere () { //Gibt eine Liste der Tiere aus der Datenbank zurück
             ObservableList<Tiere> tiereList =
                 FXCollections.observableArrayList();
         Connection con;
@@ -67,6 +67,9 @@ public class TiereDAO {
                 + ", Futterzeit = '" + actTiere.getFutterzeit() + "'"
                 + " WHERE id = " + actTiere.getTId();
         System.out.println("sql: " + sql);
+    }
+    public static void deleteTiere(Tiere tiere) {
+        String sql = "DELETE FROM tiere WHERE TId = " + tiere.getTId();
         DML_DAO.executeDML(sql);
     }
 }

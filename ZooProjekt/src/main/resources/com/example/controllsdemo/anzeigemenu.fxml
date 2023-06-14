@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="222.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllsdemo.Reservationmenu_Controller">
+   <children>
+      <VBox fx:id="vbTiere" layoutX="38.0" layoutY="58.0" prefHeight="116.0" prefWidth="243.0">
+         <children>
+            <HBox prefHeight="36.0" prefWidth="243.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="67.0" text="Tiere" />
+                  <ComboBox fx:id="cbTiere" onAction="#handleCbTiere" prefHeight="25.0" prefWidth="154.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="36.0" prefWidth="243.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="67.0" text="Gehege" />
+                  <Spinner fx:id="spGehege" prefHeight="25.0" prefWidth="154.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="36.0" prefWidth="243.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="67.0" text="Geschlecht" />
+                  <Spinner fx:id="spGeschlecht1" layoutX="77.0" layoutY="10.0" prefHeight="25.0" prefWidth="154.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="61.0" prefHeight="36.0" prefWidth="243.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="67.0" text="Anzahl" />
+                  <Spinner fx:id="spAnzahl" layoutX="77.0" layoutY="10.0" prefHeight="25.0" prefWidth="154.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="319.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Save">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

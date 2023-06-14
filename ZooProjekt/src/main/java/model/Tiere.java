@@ -23,6 +23,9 @@ public class Tiere {
     public int getTId() {
         return TId;
     }
+    public void setTId(int TId) {
+        this.TId = TId;
+    }
     public String getName() {
         return Name;
     }
@@ -70,11 +73,4 @@ public class Tiere {
     public void setFutterzeit(Date futterzeit) {
         Futterzeit = futterzeit;
     }
-/*
-    @Override
-    public String toString() {
-        return country;
-    }
-    
-    */
 }

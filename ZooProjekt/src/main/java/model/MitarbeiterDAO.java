@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MitarbeiterDAO {
-    public static ObservableList<Mitarbeiter> getMitarbeiter() {
+    public static ObservableList<Mitarbeiter> getMitarbeiter() { //Gibt eine Liste der Mitarbeiter aus der Datenbank zurück
         ObservableList<Mitarbeiter> mitarbeiterList =
                 FXCollections.observableArrayList();
         Connection con;
@@ -57,14 +57,17 @@ public class MitarbeiterDAO {
     }
     public static void update(Mitarbeiter actMitarbeiter) {
         String sql = "UPDATE Mitarbeiter SET "
-                + " Vorname  = '" + actMitarbeiter.getVorname() + "'"
-                + ", Nachname  = '" + actMitarbeiter.getNachname() + "'"
-                + ", Plz = " + actMitarbeiter.getPlz() + "'"
-                + ", Strasse = '" + actMitarbeiter.getStrasse() + "'"
-                + ", HausNr = " + actMitarbeiter.getHausNr()
-                + ", Geburtstag = '" + actMitarbeiter.getGeburtstag() + "'"
+                + " Vorname  = '" + actMitarbeiter.getVornameProperty() + "'"
+                + ", Nachname  = '" + actMitarbeiter.getNachnameProperty() + "'"
+                + ", Plz = " + actMitarbeiter.getPlzProperty() + "'"
+                + ", Strasse = '" + actMitarbeiter.getStrasseProperty() + "'"
+                + ", HausNr = " + actMitarbeiter.getStrasseProperty()
+                + ", Geburtstag = '" + actMitarbeiter.getStrasseProperty() + "'"
                 + " WHERE id = " + actMitarbeiter.getMId();
         System.out.println("sql: " + sql);
+    }
+    public static void deleteMitarbeiter(Mitarbeiter mitarbeiter) {
+        String sql = "DELETE FROM mitarbeiter WHERE MId = " + mitarbeiter.getMId();
         DML_DAO.executeDML(sql);
     }
 }

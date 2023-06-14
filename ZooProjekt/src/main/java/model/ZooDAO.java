@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 
 public class ZooDAO {
-    public static ObservableList<Zoo> getZoo () {
+    public static ObservableList<Zoo> getZoo () {//Gibt eine Liste der Zoo´s aus der Datenbank zurück
         ObservableList<Zoo> zooList =
                 FXCollections.observableArrayList();
         Connection con;
@@ -68,6 +68,9 @@ public class ZooDAO {
                 + ", Schliesszeiten = '" + actZoo.getSchliesszeiten() + "'"
                 + " WHERE id = " + actZoo.getZId();
         System.out.println("sql: " + sql);
+    }
+    public static void deleteZoo(Zoo zoo) {
+        String sql = "DELETE FROM zoo WHERE ZId = " + zoo.getZId();
         DML_DAO.executeDML(sql);
     }
 }

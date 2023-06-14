@@ -1,80 +1,100 @@
 package model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.Date;
 
 public class Mitarbeiter {
     private int MId;
-    private String Vorname;
-    private String Nachname;
-    private int Plz;
-    private String Strasse;
-    private int HausNr;
-    private Date Geburtstag;
+    private StringProperty vornameProperty;
+    private StringProperty nachnameProperty;
+    private IntegerProperty plzProperty;
+    private StringProperty strasseProperty;
+    private IntegerProperty hausNrProperty;
+    private Date gebProperty;
 
-    public Mitarbeiter(int id, String Vorname, String Nachname, int Plz, String Strasse, int HausNr, Date Geburtstag) {
+    public Mitarbeiter(int id, String vorname, String nachname, int plz, String strasse, int hausNr, Date geb) {
         this.MId = id;
-        Vorname = Vorname;
-        Nachname = Nachname;
-        Plz = Plz;
-        Strasse = Strasse;
-        HausNr = HausNr;
-        Geburtstag = Geburtstag;
+        this.vornameProperty = new SimpleStringProperty(vorname);
+        this.nachnameProperty = new SimpleStringProperty(nachname);
+        this.plzProperty = new SimpleIntegerProperty(plz);
+        this.strasseProperty = new SimpleStringProperty(strasse);
+        this.hausNrProperty = new SimpleIntegerProperty(hausNr);
+        gebProperty = geb;
     }
 
     public int getMId() {
         return MId;
     }
 
-    public String getVorname() {
-        return Vorname;
+    public String getVornameProperty() {
+        return vornameProperty.get();
     }
 
-    public void setVorname(String vorname) {
-        Vorname = vorname;
+    public StringProperty vornamePropertyProperty() {
+        return vornameProperty;
     }
 
-    public String getNachname() {
-        return Nachname;
+    public void setVornameProperty(String vornameProperty) {
+        this.vornameProperty.set(vornameProperty);
     }
 
-    public void setNachname(String nachname) {
-        Nachname = nachname;
+    public String getNachnameProperty() {
+        return nachnameProperty.get();
     }
 
-    public int getPlz() {
-        return Plz;
+    public StringProperty nachnamePropertyProperty() {
+        return nachnameProperty;
     }
 
-    public void setPlz(int plz) {
-        Plz = plz;
+    public void setNachnameProperty(String nachnameProperty) {
+        this.nachnameProperty.set(nachnameProperty);
     }
 
-    public String getStrasse() {
-        return Strasse;
+    public int getPlzProperty() {
+        return plzProperty.get();
     }
 
-    public void setStrasse(String strasse) {
-        Strasse = strasse;
+    public IntegerProperty plzPropertyProperty() {
+        return plzProperty;
     }
 
-    public int getHausNr() {
-        return HausNr;
+    public void setPlzProperty(int plzProperty) {
+        this.plzProperty.set(plzProperty);
     }
 
-    public void setHausNr(int hausNr) {
-        HausNr = hausNr;
+    public String getStrasseProperty() {
+        return strasseProperty.get();
     }
 
-    public Date getGeburtstag() {
-        return Geburtstag;
+    public StringProperty strassePropertyProperty() {
+        return strasseProperty;
     }
 
-    public void setGeburtstag(Date geburtstag) {
-        Geburtstag = geburtstag;
+    public void setStrasseProperty(String strasseProperty) {
+        this.strasseProperty.set(strasseProperty);
     }
-/*
-@Override
-public String toString() {
-    return country;
-}*/
+
+    public int getHausNrProperty() {
+        return hausNrProperty.get();
+    }
+
+    public IntegerProperty hausNrPropertyProperty() {
+        return hausNrProperty;
+    }
+
+    public void setHausNrProperty(int hausNrProperty) {
+        this.hausNrProperty.set(hausNrProperty);
+    }
+
+    public Date getGebProperty() {
+        return gebProperty;
+    }
+
+    public void setGebProperty(Date gebProperty) {
+        this.gebProperty = gebProperty;
+    }
 }

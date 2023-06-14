@@ -2,28 +2,24 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="309.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controls.FXMLDocumentController">
    <children>
-      <ComboBox fx:id="cbZoo" layoutX="167.0" layoutY="46.0" onAction="#handleCbZooAction" prefHeight="25.0" prefWidth="170.0" promptText="Zoo" />
-      <MenuBar layoutY="2.0" prefHeight="32.0" prefWidth="492.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Zoo">
-            <items>
-              <MenuItem fx:id="miEdit" mnemonicParsing="false" onAction="#handleMiEditAction" text="Edit" />
-                  <MenuItem fx:id="miShow" mnemonicParsing="false" onAction="#handleMiShowAction" text="Show" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
       <TableView fx:id="tvPersons" layoutX="20.0" layoutY="87.0" prefHeight="200.0" prefWidth="451.0">
         <columns>
           <TableColumn fx:id="tcName" prefWidth="77.00000190734863" text="Name" />
           <TableColumn fx:id="tcOeffnungszeiten" prefWidth="102.20000457763672" text="Öffnungszeiten" />
             <TableColumn fx:id="tcSchliesszeiten" prefWidth="98.60000610351562" text="Schließzeiten" />
             <TableColumn fx:id="tcOrt" prefWidth="79.800048828125" text="Ort" />
-            <TableColumn fx:id="tcEintrittskosten" prefWidth="91.39996337890625" text="Eintrittskosten" />
+            <TableColumn fx:id="tcEintrittskosten" prefWidth="91.19999999999999" text="Eintrittskosten" />
         </columns>
       </TableView>
+      <Text layoutX="222.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoo" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="cbZoo" layoutX="170.0" layoutY="56.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
