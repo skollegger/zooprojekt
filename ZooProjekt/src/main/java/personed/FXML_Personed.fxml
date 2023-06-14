@@ -22,7 +22,7 @@
             <ToggleGroup fx:id="tgDepartments" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="rbGraz" layoutX="94.0" layoutY="218.0" mnemonicParsing="false" text="Graz" toggleGroup="$tgDepartments" />
-      <RadioButton fx:id="rbSalzburg" layoutX="158.0" layoutY="218.0" mnemonicParsing="false" text="Salzburg" toggleGroup="$tgDepartments" />
+      <RadioButton fx:id="rbSalzburg" layoutX="158.0" layoutY="218.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="73.0" text="Salzburg" toggleGroup="$tgDepartments" />
       <Spinner fx:id="spEintrittskosten" layoutX="25.0" layoutY="179.0" prefHeight="26.0" prefWidth="195.0" />
    </children>
 </AnchorPane>

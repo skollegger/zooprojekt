@@ -5,5 +5,5 @@ module com.example.zooprojekt {
 
 
     opens com.example.zooprojekt to javafx.fxml;
-    exports com.example.zooprojekt;
+    //exports com.example.zooprojekt;
 }
