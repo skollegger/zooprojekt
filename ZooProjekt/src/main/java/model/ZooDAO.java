@@ -69,22 +69,5 @@ public class ZooDAO {
                 + " WHERE id = " + actZoo.getZId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
-        /*
-        for (Person p : persons) {
-            if (p.getId() == actPerson.getId()) {
-                p.setFirstName(actPerson.getFirstName());
-                p.setLastName(actPerson.getLastName());
-                p.setYob(actPerson.getYob());
-                p.setFullTime(actPerson.isFullTime());
-                p.setCountryId(actPerson.getCountryId());
-                //System.out.println("set coutryId: " + p.getCountryId());
-                break;
-            }
-        }
-        */
-        //for (Person p : persons) 
-        //        System.out.println(p);
     }
-    
-    
 }

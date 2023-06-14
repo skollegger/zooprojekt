@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class FXML_PersonedController implements Initializable {
     private Zoo actZoo;
-    
+
     @FXML
     private TextField tfName;
     @FXML
@@ -40,6 +40,10 @@ public class FXML_PersonedController implements Initializable {
     private ToggleGroup tgDepartments;
     @FXML
     private Spinner spEintrittskosten;
+    @FXML
+    private ComboBox<Tiere> cbTiere;
+    @FXML
+    private ComboBox<Mitarbeiter> cbMitarbeiter;
 
 
     @Override
@@ -47,7 +51,8 @@ public class FXML_PersonedController implements Initializable {
         spEintrittskosten.setValueFactory(
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(6,20)
         );
-        cbZoo.setItems(ZooDAO.getZoo());
+        cbTiere.setItems(TiereDAO.getTiere());
+        cbMitarbeiter.setItems(MitarbeiterDAO.getMitarbeiter());
     }
 
     @FXML
@@ -64,16 +69,16 @@ public class FXML_PersonedController implements Initializable {
         this.actZoo = actZoo;
         tfName.setText(actZoo.getName());
         tgDepartments.getSelectedToggle();
-        tfOeffnungszeiten.setValueFactory(actZoo.getOeffnungszeiten());
-        tfSchliesszeiten.setValueFactory(actZoo.getSchliesszeiten());
+        /*tfOeffnungszeiten.setValueFactory(actZoo.getOeffnungszeiten());
+        tfSchliesszeiten.setValueFactory(actZoo.getSchliesszeiten());*/
         rbGraz.setSelected(true);  //Defaultauswahl
     }
 
     public void setZoo (Zoo actZoo) {
         this.actZoo = actZoo;
-        tfName.setText(actZoo.getName());
+        tfName.setText(actZoo.getName());/*
         tfOeffnungszeiten.setText(actZoo.getOeffnungszeiten());
-        spEintrittskosten.getValueFactory().setValue(actZoo.getEintrittskosten());
+        spEintrittskosten.getValueFactory().setValue(actZoo.getEintrittskosten());*/
         rbGraz.setSelected(true);  //Defaultauswahl
         for (Toggle rb : tgDepartments.getToggles()) {
             if (((RadioButton)rb).getText().equals(actZoo.getDepartment()))

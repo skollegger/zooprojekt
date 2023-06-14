@@ -12,9 +12,6 @@ public class Zoo {
     private String department;
     private int TId;
     private int MId;
-    private String mitarbeiter;
-
-    private String tiere;
 
 
     public Zoo(int id, String name, String ort, Integer eintrittskosten,
@@ -29,9 +26,6 @@ public class Zoo {
         this.department = "Graz";
         this.TId = TId;
         this.MId = MId;
-        this.mitarbeiter = new String(mitarbeiter);
-        this.tiere = new String(tiere);
-
     }
 
     public Zoo(int ZId, String name, String ort, Integer eintrittskosten,

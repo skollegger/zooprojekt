@@ -66,22 +66,5 @@ public class MitarbeiterDAO {
                 + " WHERE id = " + actMitarbeiter.getMId();
         System.out.println("sql: " + sql);
         DML_DAO.executeDML(sql);
-        /*
-        for (Mitarbeiter m : Mitarbeiter) {
-            if (m.getMId() == actMitarbeiter.getMId()) {
-                m.setVorname(actMitarbeiter.getVorname());
-                m.setNachname(actMitarbeiter.getNachname());
-                m.setPlz(actMitarbeiter.getPlz());
-                m.setStrasse(actMitarbeiter.getStrasse());
-                m.setHausNr(actMitarbeiter.getHausNr());
-                m.setGeburtstag(actMitarbeiter.getGeburtstag());
-                m.setZId(actMitarbeiter.getZId());
-                //System.out.println("set coutryId: " + p.getCountryId());
-                break;
-            }
-        }
-        for (Mitarbeiter m : Mitarbeiter)
-              System.out.println(m);
-    */
     }
 }

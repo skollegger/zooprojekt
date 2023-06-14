@@ -52,7 +52,7 @@ public class FXMLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
-        cbZoo.setItems(ZooDAO.getZoo()); //war ausgeblendet?
+        //cbZoo.setItems(ZooDAO.getZoo());
         zooList = ZooDAO.getZoo();
         //ComboBox an die Liste binden
         cbZoo.itemsProperty().bind(listProperty);
@@ -68,7 +68,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @Deprecated
-    private void handleCbPersonsAction(ActionEvent event) {
+    private void handleCbPersons(ActionEvent event) {
         //merke den aktuellen Datensatz
         actZoo = cbZoo.getSelectionModel().getSelectedItem();
         //getSelectedItem liefert eine Referenz auf ein Personenobjekt !!!
@@ -95,22 +95,20 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("after Dialog: " + actZoo);
             zooList.set(inx, actZoo);
 
-            //cbPersons.setItems(PersonDAO.getPersons());
+            cbZoo.setItems(ZooDAO.getZoo());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
         //lade die Textfelder mit den Personendaten
-        /*
-        for (int i = 0; i < radios.length; i++)
-            if (actPerson.getDepartment().equals(departments[i]))
+       /* for (int i = 0; i < radios.length; i++)
+            if (actZoo.getDepartment().equals(departments[i]))
                 radios[i].setSelected(true);
-        if (actPerson.getDepartment().equals("IT"))
-            rbIt.setSelected(true);
-        else if(actPerson.getDepartment().equals("Sales"))
-            rbSales.setSelected(true);
-        else if(actPerson.getDepartment().equals("Finance"))
-            rbFinance.setSelected(true);
-        */
+        if (actZoo.getDepartment().equals("Wien"))
+            rbWien.setSelected(true);
+        else if(actZoo.getDepartment().equals("Graz"))
+            rbGraz.setSelected(true);
+        else if(actZoo.getDepartment().equals("Salzburg"))
+            rbSalzburg.setSelected(true); */
         //tfYob.setText("" + actPerson.getYob());
     }
 
