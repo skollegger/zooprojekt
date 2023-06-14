@@ -3,9 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="219.0" prefWidth="247.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="personed.FXML_PersonedController">
+<AnchorPane id="AnchorPane" prefHeight="272.0" prefWidth="247.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="personed.FXML_PersonedController">
    <children>
       <TextField fx:id="tfName" layoutX="27.0" layoutY="54.0" prefHeight="31.0" prefWidth="195.0" />
+      <TextField fx:id="tfOeffnungszeiten" layoutX="26.0" layoutY="94.0" prefHeight="31.0" prefWidth="195.0" />
+      <TextField fx:id="tfSchliesszeiten" layoutX="26.0" layoutY="135.0" prefHeight="31.0" prefWidth="195.0" />
       <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="247.0">
         <menus>
           <Menu mnemonicParsing="false" text="Zoo">
@@ -15,13 +17,12 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Spinner fx:id="spOeffnungszeiten" layoutX="27.0" layoutY="135.0" prefHeight="31.0" prefWidth="195.0" />
-      <Spinner fx:id="spSchliesszeiten" layoutX="27.0" layoutY="95.0" prefHeight="31.0" prefWidth="195.0" />
-      <RadioButton fx:id="rbWien" layoutX="27.0" layoutY="181.0" mnemonicParsing="false" text="Wien">
+      <RadioButton fx:id="rbWien" layoutX="26.0" layoutY="218.0" mnemonicParsing="false" text="Wien">
          <toggleGroup>
             <ToggleGroup fx:id="tgDepartments" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="rbGraz" layoutX="93.0" layoutY="181.0" mnemonicParsing="false" text="Graz" toggleGroup="$tgDepartments" />
-      <RadioButton fx:id="rbSalzburg" layoutX="154.0" layoutY="181.0" mnemonicParsing="false" text="Salzburg" toggleGroup="$tgDepartments" />
+      <RadioButton fx:id="rbGraz" layoutX="94.0" layoutY="218.0" mnemonicParsing="false" text="Graz" toggleGroup="$tgDepartments" />
+      <RadioButton fx:id="rbSalzburg" layoutX="158.0" layoutY="218.0" mnemonicParsing="false" text="Salzburg" toggleGroup="$tgDepartments" />
+      <Spinner fx:id="spEintrittskosten" layoutX="25.0" layoutY="179.0" prefHeight="26.0" prefWidth="195.0" />
    </children>
 </AnchorPane>

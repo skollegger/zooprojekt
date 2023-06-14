@@ -25,34 +25,36 @@ public class FXML_PersonedController implements Initializable {
     @FXML
     private MenuItem miSave;
     @FXML
-    private ToggleGroup tgDepartments;
-    @FXML
     private RadioButton rbWien;
     @FXML
     private RadioButton rbGraz;
     @FXML
     private RadioButton rbSalzburg;
     @FXML
-    private Spinner spOeffnungszeiten;
+    private TextField tfOeffnungszeiten;
     @FXML
-    private Spinner spSchliesszeiten;
+    private TextField tfSchliesszeiten;
+    @FXML
+    private ToggleGroup tgDepartments;
+    @FXML
+    private Spinner spEintrittskosten;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        spOeffnungszeiten.setValueFactory(
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(6,9)
+        spEintrittskosten.setValueFactory(
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(6,20)
         );
-        cbZoo.setItems(TiereDAO.getTiere());
+        cbZoo.setItems(ZooDAO.getZoo());
     }
 
     @FXML
     private void handleMiSaveAction(ActionEvent event) {
         actZoo.setName(tfName.getText());
-        actZoo.setOrt(tfOrt.getText());
-        actZoo.setEintrittskosten(Integer.valueOf(tfEintrittskosten.getId()));
-        actZoo.setOeffnungszeiten(tfOeffnungszeiten.getValue());
-        actZoo.setSchliesszeiten(tfSchliesszeiten.getValue());
+        actZoo.setOrt(rbGraz.getText());
+        actZoo.setOeffnungszeiten((Time) tfOeffnungszeiten.getOnAction());
+        actZoo.setSchliesszeiten((Time) tfSchliesszeiten.getOnAction());
+        actZoo.setDepartment(((RadioButton)tgDepartments.getSelectedToggle()).getText());
         ZooDAO.update (actZoo);
     }
     
@@ -64,4 +66,15 @@ public class FXML_PersonedController implements Initializable {
         tfSchliesszeiten.setValueFactory(actZoo.getSchliesszeiten());
         rbIt.setSelected(true);  //Defaultauswahl
     }
+
+    public void setZoo (Zoo actZoo) {
+        this.actZoo = actZoo;
+        tfName.setText(actZoo.getName());
+        tfOeffnungszeiten.setText(actZoo.getOeffnungszeiten());
+        spEintrittskosten.getValueFactory().setValue(actZoo.getEintrittskosten());
+        rbGraz.setSelected(true);  //Defaultauswahl
+        for (Toggle rb : tgDepartments.getToggles()) {
+            if (((RadioButton)rb).getText().equals(actZoo.getDepartment()))
+                tgDepartments.selectToggle(rb);
+        }
 }

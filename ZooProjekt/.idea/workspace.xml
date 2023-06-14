@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocument.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mitarbeiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/personed/FXML_PersonedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_PersonedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/zooprojekt/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

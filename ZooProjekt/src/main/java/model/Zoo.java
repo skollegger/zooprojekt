@@ -9,6 +9,8 @@ public class Zoo {
     private Integer Eintrittskosten;
     private Time Oeffnungszeiten;
     private Time Schliesszeiten;
+    private String department;
+
 
     public Zoo(int id, String name, String ort, Integer eintrittskosten,
                Time oeffnungszeiten, Time schliesszeiten) {
@@ -18,6 +20,18 @@ public class Zoo {
         Eintrittskosten = eintrittskosten;
         Oeffnungszeiten = oeffnungszeiten;
         Schliesszeiten = schliesszeiten;
+        this.department = "Graz";
+    }
+
+    public Zoo(int ZId, String name, String ort, Integer eintrittskosten,
+               Time oeffnungszeiten, Time schliesszeiten, String department) {
+        this.ZId = ZId;
+        Name = name;
+        Ort = ort;
+        Eintrittskosten = eintrittskosten;
+        Oeffnungszeiten = oeffnungszeiten;
+        Schliesszeiten = schliesszeiten;
+        this.department = department;
     }
 
     public int getZId() {
@@ -61,5 +75,13 @@ public class Zoo {
 
     public void setSchliesszeiten(Time schliesszeiten) {
         Schliesszeiten = schliesszeiten;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getDepartment() {
+        return department;
     }
 }
