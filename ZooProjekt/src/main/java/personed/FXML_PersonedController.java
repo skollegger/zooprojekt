@@ -25,6 +25,8 @@ public class FXML_PersonedController implements Initializable {
     @FXML
     private MenuItem miSave;
     @FXML
+    private MenuItem miEdit;
+    @FXML
     private RadioButton rbWien;
     @FXML
     private RadioButton rbGraz;
@@ -61,10 +63,10 @@ public class FXML_PersonedController implements Initializable {
     public void setActZoo (Zoo actZoo) {
         this.actZoo = actZoo;
         tfName.setText(actZoo.getName());
-        tfOrt.setText(actZoo.getOrt());
+        tgDepartments.getSelectedToggle();
         tfOeffnungszeiten.setValueFactory(actZoo.getOeffnungszeiten());
         tfSchliesszeiten.setValueFactory(actZoo.getSchliesszeiten());
-        rbIt.setSelected(true);  //Defaultauswahl
+        rbGraz.setSelected(true);  //Defaultauswahl
     }
 
     public void setZoo (Zoo actZoo) {
@@ -77,4 +79,5 @@ public class FXML_PersonedController implements Initializable {
             if (((RadioButton)rb).getText().equals(actZoo.getDepartment()))
                 tgDepartments.selectToggle(rb);
         }
+    }
 }

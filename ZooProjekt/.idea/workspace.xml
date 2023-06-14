@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/ControlsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/ControlsMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/personed/FXML_PersonedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_PersonedController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

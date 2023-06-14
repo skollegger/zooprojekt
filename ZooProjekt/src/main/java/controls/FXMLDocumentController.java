@@ -124,11 +124,9 @@ public class FXMLDocumentController implements Initializable {
         actZoo = zooList.get(inx);
 
         cbZoo.getItems().remove(actZoo);
-        //??
         cbZoo.getItems().add(actZoo);
         cbZoo.setItems(ZooDAO.getZoo());
         zooList.set(inx, actZoo);
-
     }
 
     @FXML
