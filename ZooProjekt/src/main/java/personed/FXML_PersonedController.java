@@ -19,13 +19,10 @@ import java.util.ResourceBundle;
 
 public class FXML_PersonedController implements Initializable {
     private Zoo actZoo;
-
     @FXML
     private TextField tfName;
     @FXML
     private MenuItem miSave;
-    @FXML
-    private MenuItem miEdit;
     @FXML
     private RadioButton rbWien;
     @FXML
@@ -40,25 +37,20 @@ public class FXML_PersonedController implements Initializable {
     private ToggleGroup tgDepartments;
     @FXML
     private Spinner spEintrittskosten;
-    @FXML
-    private ComboBox<Tiere> cbTiere;
-    @FXML
-    private ComboBox<Mitarbeiter> cbMitarbeiter;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         spEintrittskosten.setValueFactory(
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(6,20)
-        );
+        );/*
         cbTiere.setItems(TiereDAO.getTiere());
-        cbMitarbeiter.setItems(MitarbeiterDAO.getMitarbeiter());
+        cbMitarbeiter.setItems(MitarbeiterDAO.getMitarbeiter());*/
     }
 
     @FXML
     private void handleMiSaveAction(ActionEvent event) {
         actZoo.setName(tfName.getText());
-        actZoo.setOrt(rbGraz.getText());
         actZoo.setOeffnungszeiten((Time) tfOeffnungszeiten.getOnAction());
         actZoo.setSchliesszeiten((Time) tfSchliesszeiten.getOnAction());
         actZoo.setDepartment(((RadioButton)tgDepartments.getSelectedToggle()).getText());
@@ -79,7 +71,9 @@ public class FXML_PersonedController implements Initializable {
         tfName.setText(actZoo.getName());/*
         tfOeffnungszeiten.setText(actZoo.getOeffnungszeiten());
         spEintrittskosten.getValueFactory().setValue(actZoo.getEintrittskosten());*/
-        rbGraz.setSelected(true);  //Defaultauswahl
+        rbWien.setSelected(true);  //Defaultauswahl
+        rbGraz.setSelected(false);  //Defaultauswahl
+        rbSalzburg.setSelected(false);  //Defaultauswahl
         for (Toggle rb : tgDepartments.getToggles()) {
             if (((RadioButton)rb).getText().equals(actZoo.getDepartment()))
                 tgDepartments.selectToggle(rb);

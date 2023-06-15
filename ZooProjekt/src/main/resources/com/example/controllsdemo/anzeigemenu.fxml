@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="222.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllsdemo.Reservationmenu_Controller">
+<AnchorPane prefHeight="222.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllsdemo.Anzeige_Controller">
    <children>
       <VBox fx:id="vbTiere" layoutX="38.0" layoutY="58.0" prefHeight="116.0" prefWidth="243.0">
          <children>
@@ -35,12 +35,12 @@
       </VBox>
       <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="319.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu fx:id="miEditTiere" mnemonicParsing="false" text="Edit">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Save">
+            <Menu fx:id="miSaveTiere" mnemonicParsing="false" text="Save">
                <items>
                   <MenuItem mnemonicParsing="false" text="About" />
                </items>

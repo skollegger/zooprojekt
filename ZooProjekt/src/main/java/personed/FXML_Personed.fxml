@@ -12,7 +12,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Zoo">
             <items>
-                  <MenuItem fx:id="miSave" mnemonicParsing="false" onAction="#handleMiSaveAction" text="Save" />
+                  <MenuItem fx:id="miSave" mnemonicParsing="false" onAction="#handleMiSaveAction" text="miSave" />
             </items>
           </Menu>
         </menus>

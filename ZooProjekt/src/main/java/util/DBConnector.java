@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class DBConnector {  
   private static Connection conn;  
-  private static String url = "jdbc:mysql://localhost:3306";
-  private static String user = "root";//Username of database  
+  private static String url = "jdbc:mysql://localhost:3306/test";
+  private static String user = "root";//Username of database
   private static String pass = "";//Password of database
   
   public static Connection connect() throws SQLException{  

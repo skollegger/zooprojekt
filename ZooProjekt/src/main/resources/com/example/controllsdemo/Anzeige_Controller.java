@@ -1,4 +1,5 @@
-public class Anzeigemenu_Controller
+package com.example.controllsdemo;
+public class Anzeige_Controller
 {
     @javafx.fxml.FXML
     private VBox vbTiere;
@@ -7,9 +8,13 @@ public class Anzeigemenu_Controller
     @javafx.fxml.FXML
     private Spinner spGehege;
     @javafx.fxml.FXML
+    private Spinner spAnzahl;
+    @javafx.fxml.FXML
     private Spinner spGeschlecht1;
     @javafx.fxml.FXML
-    private Spinner spAnzahl;
+    private Menu miEditTiere;
+    @javafx.fxml.FXML
+    private Menu miSaveTiere;
 
     @javafx.fxml.FXML
     public void initialize() {

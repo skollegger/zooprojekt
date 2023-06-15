@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/personed/FXML_Personed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/controllsdemo/reservationmenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/controllsdemo/reservationmenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/controllsdemo/reservationmenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/controllsdemo/anzeigemenu.fxml" afterDir="false" />
 =======
       <change beforePath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/FXMLDocumentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" afterDir="false" />
