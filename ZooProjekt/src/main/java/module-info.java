@@ -5,5 +5,6 @@ module com.example.zooprojekt {
 
 
     opens com.example.zooprojekt to javafx.fxml;
-    exports com.example.controllsdemo;
+    exports com.example.controllsdemo; //muss gleich heißen wie bei den Resources,
+    // weil es die Dateien, wie: anzeigemenu und so sonst nicht findet
 }
