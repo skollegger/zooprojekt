@@ -61,8 +61,8 @@ public class MitarbeiterDAO {
                 + ", Nachname  = '" + actMitarbeiter.getNachnameProperty() + "'"
                 + ", Plz = " + actMitarbeiter.getPlzProperty() + "'"
                 + ", Strasse = '" + actMitarbeiter.getStrasseProperty() + "'"
-                + ", HausNr = " + actMitarbeiter.getStrasseProperty()
-                + ", Geburtstag = '" + actMitarbeiter.getStrasseProperty() + "'"
+                + ", HausNr = " + actMitarbeiter.getHausNrProperty()
+                + ", Geburtstag = '" + actMitarbeiter.getGebProperty() + "'"
                 + " WHERE id = " + actMitarbeiter.getMId();
         System.out.println("sql: " + sql);
     }
