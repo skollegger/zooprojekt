@@ -38,7 +38,7 @@ public class MitarbeiterDAO {
 
         return mitarbeiterList;
     }
-    public static String getMitarbeiterById (int id) {
+    public static String getMitarbeiterById (int id) { //alles ausgeben
         Connection con;
         String Mitarbeiter = "no Mitarbeiter";
 

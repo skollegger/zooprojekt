@@ -5,28 +5,30 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.util.Callback;
 import model.Zoo;
 import model.ZooDAO;
 
 import java.net.URL;
+import java.sql.Time;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable  {
 
     @FXML
-    private TableView tvPersons;
+    private TableView<Zoo> tvPersons;
     @FXML
-    private TableColumn tcName;
+    private TableColumn<Zoo, String> tcName;
     @FXML
-    private TableColumn tcOeffnungszeiten;
+    private TableColumn<Zoo, Time> tcOeffnungszeiten;
     @FXML
-    private TableColumn tcSchliesszeiten;
+    private TableColumn<Zoo, Time> tcSchliesszeiten;
     @FXML
-    private TableColumn tcOrt;
+    private TableColumn<Zoo, String> tcOrt;
     @FXML
-    private TableColumn tcEintrittskosten;
+    private TableColumn<Zoo, Integer> tcEintrittskosten;
     @FXML
     private ChoiceBox cbZoo;
     @FXML
@@ -34,10 +36,14 @@ public class HelloController implements Initializable  {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        tcOeffnungszeiten.setCellValueFactory(new PropertyValueFactory<>("Oeffnungszeiten"));
+        tcName.setCellValueFactory(new PropertyValueFactory<>("ZName"));
+        tcSchliesszeiten.setCellValueFactory(new PropertyValueFactory<>("Schliesszeiten"));
+        tcOrt.setCellValueFactory(new PropertyValueFactory<>("Ort"));
+        tcEintrittskosten.setCellValueFactory(new PropertyValueFactory<>("Eintrittskosten"));
 
+        tvPersons.setItems(ZooDAO.getZoo());
         cbZoo.setItems(ZooDAO.getZoo());
-
-
     }
 
     @FXML

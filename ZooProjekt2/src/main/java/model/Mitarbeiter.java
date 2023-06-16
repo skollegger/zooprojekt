@@ -8,7 +8,7 @@ import javafx.beans.property.StringProperty;
 import java.util.Date;
 
 public class Mitarbeiter {
-    private int MitarbeiterId;
+    private int MitarbeiterId; //Parameter
     private StringProperty vornameProperty;
     private StringProperty nachnameProperty;
     private IntegerProperty plzProperty;
@@ -16,7 +16,7 @@ public class Mitarbeiter {
     private IntegerProperty hausNrProperty;
     private Date gebProperty;
 
-    public Mitarbeiter(int id, String vorname, String nachname, int plz, String strasse, int hausNr, Date geb) {
+    public Mitarbeiter(int id, String vorname, String nachname, int plz, String strasse, int hausNr, Date geb) { //Konstruktor
         this.MitarbeiterId = id;
         this.vornameProperty = new SimpleStringProperty(vorname);
         this.nachnameProperty = new SimpleStringProperty(nachname);
@@ -36,7 +36,7 @@ public class Mitarbeiter {
 
     public StringProperty vornamePropertyProperty() {
         return vornameProperty;
-    }
+    } //für die TableView
 
     public void setVornameProperty(String vornameProperty) {
         this.vornameProperty.set(vornameProperty);

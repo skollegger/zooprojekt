@@ -7,16 +7,9 @@
     <list default="true" id="9a576cbc-1142-4342-a14b-b3dec30f4fd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../ZooProjekt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mitarbeiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tiere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TiereDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TiereDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/DBConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/zooprojekt2/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/zooprojekt2/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
