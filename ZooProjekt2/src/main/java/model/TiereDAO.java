@@ -19,12 +19,12 @@ public class TiereDAO {
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT t.* FROM tiere t";
+            String sql = "SELECT * FROM tiere";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
                 tiere = new Tiere(
-                     rs.getInt("id"),
+                     rs.getInt("TiereId"),
                      rs.getString("Name"),
                      rs.getString("Art"),
                      rs.getInt("Alter"),
@@ -69,7 +69,7 @@ public class TiereDAO {
         System.out.println("sql: " + sql);
     }
     public static void deleteTiere(Tiere tiere) {
-        String sql = "DELETE FROM tiere WHERE TId = " + tiere.getTId();
+        String sql = "DELETE FROM Tiere WHERE TiereId = " + tiere.getTId();
         DML_DAO.executeDML(sql);
     }
 }

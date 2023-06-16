@@ -8,7 +8,7 @@ import javafx.beans.property.StringProperty;
 import java.util.Date;
 
 public class Mitarbeiter {
-    private int MId;
+    private int MitarbeiterId;
     private StringProperty vornameProperty;
     private StringProperty nachnameProperty;
     private IntegerProperty plzProperty;
@@ -17,7 +17,7 @@ public class Mitarbeiter {
     private Date gebProperty;
 
     public Mitarbeiter(int id, String vorname, String nachname, int plz, String strasse, int hausNr, Date geb) {
-        this.MId = id;
+        this.MitarbeiterId = id;
         this.vornameProperty = new SimpleStringProperty(vorname);
         this.nachnameProperty = new SimpleStringProperty(nachname);
         this.plzProperty = new SimpleIntegerProperty(plz);
@@ -27,7 +27,7 @@ public class Mitarbeiter {
     }
 
     public int getMId() {
-        return MId;
+        return MitarbeiterId;
     }
 
     public String getVornameProperty() {

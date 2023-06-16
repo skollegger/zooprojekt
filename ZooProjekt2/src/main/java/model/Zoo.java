@@ -3,52 +3,49 @@ package model;
 import java.sql.Time;
 
 public class Zoo {
-    private int ZId;
-    private String Name;
+    private int ZooId;
+    private String ZName;
     private String Ort;
     private Integer Eintrittskosten;
     private Time Oeffnungszeiten;
     private Time Schliesszeiten;
-    private String department;
-    private int TId;
-    private int MId;
+    private int TiereId;
+    private int MitarbeiterId;
 
 
     public Zoo(int id, String name, String ort, Integer eintrittskosten,
                Time oeffnungszeiten, Time schliesszeiten,
-               String department, String tiere, String mitarbeiter, int TId, int MId) {
-        this.ZId = id;
-        Name = name;
+               int TId, int MId) {
+        this.ZooId = id;
+        ZName = name;
         Ort = ort;
         Eintrittskosten = eintrittskosten;
         Oeffnungszeiten = oeffnungszeiten;
         Schliesszeiten = schliesszeiten;
-        this.department = "Graz";
-        this.TId = TId;
-        this.MId = MId;
+        this.TiereId = TId;
+        this.MitarbeiterId = MId;
     }
 
     public Zoo(int ZId, String name, String ort, Integer eintrittskosten,
-               Time oeffnungszeiten, Time schliesszeiten, String department) {
-        this.ZId = ZId;
-        Name = name;
+               Time oeffnungszeiten, Time schliesszeiten) {
+        this.ZooId = ZId;
+        ZName = name;
         Ort = ort;
         Eintrittskosten = eintrittskosten;
         Oeffnungszeiten = oeffnungszeiten;
         Schliesszeiten = schliesszeiten;
-        this.department = department;
     }
 
     public int getZId() {
-        return ZId;
+        return ZooId;
     }
 
-    public String getName() {
-        return Name;
+    public String getZName() {
+        return ZName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setZName(String name) {
+        ZName = name;
     }
 
     public String getOrt() {
@@ -82,16 +79,16 @@ public class Zoo {
         Schliesszeiten = schliesszeiten;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public int getTiereId() {
+        return TiereId;
     }
-    public String getDepartment() {
-        return department;
+    public int getMitarbeiterID(){
+        return MitarbeiterId;
     }
-    public int getTId() {
-        return TId;
-    }
-    public int getMID(){
-        return MId;
+
+    @Override
+    public String toString() {
+        return  "Zooname " + ZName +
+                ", Ort " + Ort;
     }
 }

@@ -18,12 +18,12 @@ public class MitarbeiterDAO {
 
         try {
             con = DBConnector.connect();
-            String sql = "SELECT m.* FROM mitarbeiter m";
+            String sql = "SELECT * FROM mitarbeiter";
             ResultSet rs = con.createStatement().executeQuery(sql);
 
             while (rs.next()) {
                 mitarbeiterList.add(new Mitarbeiter(
-                        rs.getInt("id"),
+                        rs.getInt("MitarbeiterId"),
                         rs.getString("Vorname"),
                         rs.getString("Nachname"),
                         rs.getInt("Plz"),
@@ -44,7 +44,7 @@ public class MitarbeiterDAO {
 
         try {
             con = DBConnector.connect();
-            String sql = "SELECT m.* FROM Mitarbeiter m Where id = " + id;
+            String sql = "SELECT * FROM mitarbeiter Where id = " + id;
             ResultSet rs = con.createStatement().executeQuery(sql);
 
             rs.first();
@@ -56,7 +56,7 @@ public class MitarbeiterDAO {
         return Mitarbeiter;
     }
     public static void update(Mitarbeiter actMitarbeiter) {
-        String sql = "UPDATE Mitarbeiter SET "
+        String sql = "UPDATE mitarbeiter SET "
                 + " Vorname  = '" + actMitarbeiter.getVornameProperty() + "'"
                 + ", Nachname  = '" + actMitarbeiter.getNachnameProperty() + "'"
                 + ", Plz = " + actMitarbeiter.getPlzProperty() + "'"
@@ -67,7 +67,7 @@ public class MitarbeiterDAO {
         System.out.println("sql: " + sql);
     }
     public static void deleteMitarbeiter(Mitarbeiter mitarbeiter) {
-        String sql = "DELETE FROM mitarbeiter WHERE MId = " + mitarbeiter.getMId();
+        String sql = "DELETE FROM mitarbeiter WHERE MitarbeiterId = " + mitarbeiter.getMId();
         DML_DAO.executeDML(sql);
     }
 }

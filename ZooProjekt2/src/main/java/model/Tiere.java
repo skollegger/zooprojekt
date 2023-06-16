@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 public class Tiere {
-    private int TId;
+    private int TiereId;
     private String Name;
     private String Art;
     private int Alter;
@@ -12,7 +12,7 @@ public class Tiere {
     private Date Futterzeit;
 
     public Tiere(int id, String name, String art, int alter, String geschlecht, int gehege, Date futterzeit) {
-        this.TId = id;
+        this.TiereId = id;
         Name = name;
         Art = art;
         Alter = alter;
@@ -21,10 +21,10 @@ public class Tiere {
         Futterzeit = futterzeit;
     }
     public int getTId() {
-        return TId;
+        return TiereId;
     }
     public void setTId(int TId) {
-        this.TId = TId;
+        this.TiereId = TId;
     }
     public String getName() {
         return Name;

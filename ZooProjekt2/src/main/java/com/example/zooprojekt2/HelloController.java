@@ -1,28 +1,51 @@
 package com.example.zooprojekt2;
 
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
+import javafx.util.Callback;
+import model.Zoo;
+import model.ZooDAO;
 
-public class HelloController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class HelloController implements Initializable  {
 
     @FXML
-    private ColumnConstraints tcMId;
+    private TableView tvPersons;
     @FXML
-    private ColumnConstraints tcVorname;
+    private TableColumn tcName;
     @FXML
-    private ColumnConstraints tcNachname;
+    private TableColumn tcOeffnungszeiten;
     @FXML
-    private ColumnConstraints tcPlz;
+    private TableColumn tcSchliesszeiten;
     @FXML
-    private ColumnConstraints tcStrasse;
+    private TableColumn tcOrt;
     @FXML
-    private ColumnConstraints tcHauNr;
+    private TableColumn tcEintrittskosten;
     @FXML
-    private ColumnConstraints tcGeb;
+    private ChoiceBox cbZoo;
     @FXML
-    private ColumnConstraints tcZId;
+    private Button btnShow;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        cbZoo.setItems(ZooDAO.getZoo());
+
+
+    }
+
     @FXML
-    private Menu miEditMitarbeiter;
+    public void handleShow(ActionEvent actionEvent) {
+
+        Zoo zoo = (Zoo) cbZoo.getSelectionModel().getSelectedItem();
+        System.out.println(zoo);
+
+
+    }
 }

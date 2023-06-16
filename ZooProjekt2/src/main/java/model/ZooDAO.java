@@ -18,22 +18,17 @@ public class ZooDAO {
         
         try {
             con = DBConnector.connect();
-            String sql = "SELECT z.*, t.TId, m.MId From  Zoo z, Tiere t, Mitarbeiter m";
+            String sql = "SELECT * from zoo";
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
                 zooList.add(new Zoo(
-                     rs.getInt("Id"),
-                     rs.getString("Name"),
+                     rs.getInt("ZooId"),
+                     rs.getString("ZName"),
                      rs.getString("Ort"),
                      rs.getInt("Eintrittskosten"),
                      rs.getTime("Oeffnungszeiten"),
-                     rs.getTime("Schliesszeiten"),
-                     rs.getString("department"),
-                     rs.getString("Tiere"),
-                     rs.getString("Mitarbeiter"),
-                     rs.getInt("TierId"),
-                     rs.getInt("MitarbeiterId"))
+                     rs.getTime("Schliesszeit"))
                 );
             }
         } catch (SQLException ex) {
@@ -61,7 +56,7 @@ public class ZooDAO {
 
     public static void update(Zoo actZoo) {
         String sql = "UPDATE persons SET "
-                + " Name  = '" + actZoo.getName() + "'"
+                + " Name  = '" + actZoo.getZName() + "'"
                 + ", Ort  = '" + actZoo.getOrt() + "'"
                 + ", Eintrittskosten = " + actZoo.getEintrittskosten()  + "'"
                 + ", Oeffnungszeiten = '" + actZoo.getOeffnungszeiten() + "'"
