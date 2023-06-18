@@ -42,7 +42,7 @@ public class HelloController implements Initializable  {
         tcOrt.setCellValueFactory(new PropertyValueFactory<>("Ort"));
         tcEintrittskosten.setCellValueFactory(new PropertyValueFactory<>("Eintrittskosten"));
 
-        tvPersons.setItems(ZooDAO.getZoo());
+        tvPersons.setItems(ZooDAO.getZoo()); //Objekt der DAO und speichert die Daten in die Tableview
         cbZoo.setItems(ZooDAO.getZoo());
     }
 

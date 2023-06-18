@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt2/src/main/java/com/example/zooprojekt2/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt2/src/main/java/com/example/zooprojekt2/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt2/src/main/java/model/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt2/src/main/java/model/Mitarbeiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt2/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt2/src/main/java/module-info.java" afterDir="false" />
-    </list>
+    <list default="true" id="348afbf8-910d-4e2e-9ff2-15260fc32d0c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
