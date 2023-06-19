@@ -1,5 +1,5 @@
 module com.example.zooprojekt2 {
-    requires javafx.controls;
+    requires javafx.controls; //Bibliotheken
     requires javafx.fxml;
     requires java.sql;
 

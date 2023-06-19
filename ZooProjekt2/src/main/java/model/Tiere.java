@@ -1,19 +1,21 @@
 package model;
 
+import java.sql.Time;
 import java.util.Date;
+import java.util.Timer;
 
 public class Tiere {
     private int TiereId;
-    private String Name;
+    private String TName;
     private String Art;
     private int Alter;
     private String Geschlecht;
     private int Gehege;
-    private Date Futterzeit;
+    private Time Futterzeit;
 
-    public Tiere(int id, String name, String art, int alter, String geschlecht, int gehege, Date futterzeit) {
+    public Tiere(int id, String name, String art, int alter, String geschlecht, int gehege, Time futterzeit) {
         this.TiereId = id;
-        Name = name;
+        TName = name;
         Art = art;
         Alter = alter;
         Geschlecht = geschlecht;
@@ -26,12 +28,12 @@ public class Tiere {
     public void setTId(int TId) {
         this.TiereId = TId;
     }
-    public String getName() {
-        return Name;
+    public String getTName() {
+        return TName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setTName(String name) {
+        TName = name;
     }
 
     public String getArt() {
@@ -70,7 +72,12 @@ public class Tiere {
         return Futterzeit;
     }
 
-    public void setFutterzeit(Date futterzeit) {
+    public void setFutterzeit(Time futterzeit) {
         Futterzeit = futterzeit;
+    }
+    @Override
+    public String toString() {
+        return  "Tiername " + TName +
+                ", Gehege:  " + Gehege;
     }
 }

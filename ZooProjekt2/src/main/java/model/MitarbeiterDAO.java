@@ -57,17 +57,17 @@ public class MitarbeiterDAO {
     }
     public static void update(Mitarbeiter actMitarbeiter) {
         String sql = "UPDATE mitarbeiter SET "
-                + " Vorname  = '" + actMitarbeiter.getVornameProperty() + "'"
-                + ", Nachname  = '" + actMitarbeiter.getNachnameProperty() + "'"
-                + ", Plz = " + actMitarbeiter.getPlzProperty() + "'"
-                + ", Strasse = '" + actMitarbeiter.getStrasseProperty() + "'"
-                + ", HausNr = " + actMitarbeiter.getHausNrProperty()
-                + ", Geburtstag = '" + actMitarbeiter.getGebProperty() + "'"
-                + " WHERE id = " + actMitarbeiter.getMId();
+                + " Vorname  = '" + actMitarbeiter.getVorname() + "'"
+                + ", Nachname  = '" + actMitarbeiter.getNachname() + "'"
+                + ", Plz = " + actMitarbeiter.getPlz() + "'"
+                + ", Strasse = '" + actMitarbeiter.getStrasse() + "'"
+                + ", HausNr = " + actMitarbeiter.getHausNr()
+                + ", Geburtstag = '" + actMitarbeiter.getGeburtstag() + "'"
+                + " WHERE id = " + actMitarbeiter.getMitarbeiterId();
         System.out.println("sql: " + sql);
     }
     public static void deleteMitarbeiter(Mitarbeiter mitarbeiter) {
-        String sql = "DELETE FROM mitarbeiter WHERE MitarbeiterId = " + mitarbeiter.getMId();
+        String sql = "DELETE FROM mitarbeiter WHERE MitarbeiterId = " + mitarbeiter.getMitarbeiterId();
         DML_DAO.executeDML(sql);
     }
 }

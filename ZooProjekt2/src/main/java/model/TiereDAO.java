@@ -23,15 +23,15 @@ public class TiereDAO {
             ResultSet rs = con.createStatement().executeQuery(sql);
             
             while (rs.next()) {
-                tiere = new Tiere(
+                tiereList.add(new Tiere(
                      rs.getInt("TiereId"),
-                     rs.getString("Name"),
+                     rs.getString("TName"),
                      rs.getString("Art"),
                      rs.getInt("Alter"),
                      rs.getString("Geschlecht"),
                      rs.getInt("Gehege"),
-                     rs.getDate("Futterzeit")
-                );
+                     rs.getTime("Futterzeit")
+                ));
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -59,7 +59,7 @@ public class TiereDAO {
 
     public static void update(Tiere actTiere) {
         String sql = "UPDATE Tiere SET "
-                + " Name  = '" + actTiere.getName() + "'"
+                + " Name  = '" + actTiere.getTName() + "'"
                 + ", Art  = '" + actTiere.getArt() + "'"
                 + ", Alter = " + actTiere.getAlter() + "'"
                 + ", Geschlecht = '" + actTiere.getGeschlecht() + "'"

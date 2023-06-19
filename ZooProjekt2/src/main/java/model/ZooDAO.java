@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class ZooDAO {
+public class ZooDAO { //hier wird das Objekt gemacht
     public static ObservableList<Zoo> getZoo () {//Gibt eine Liste der Zoo´s aus der Datenbank zurück
         ObservableList<Zoo> zooList =
                 FXCollections.observableArrayList();

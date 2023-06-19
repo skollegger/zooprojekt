@@ -1,100 +1,81 @@
 package model;
-
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 import java.util.Date;
 
 public class Mitarbeiter {
     private int MitarbeiterId; //Parameter
-    private StringProperty vornameProperty;
-    private StringProperty nachnameProperty;
-    private IntegerProperty plzProperty;
-    private StringProperty strasseProperty;
-    private IntegerProperty hausNrProperty;
-    private Date gebProperty;
+    private String Vorname;
+    private String Nachname;
+    private Integer Plz;
+    private String Strasse;
+    private Integer HausNr;
+    private Date Geburtstag;
 
-    public Mitarbeiter(int id, String vorname, String nachname, int plz, String strasse, int hausNr, Date geb) { //Konstruktor
-        this.MitarbeiterId = id;
-        this.vornameProperty = new SimpleStringProperty(vorname);
-        this.nachnameProperty = new SimpleStringProperty(nachname);
-        this.plzProperty = new SimpleIntegerProperty(plz);
-        this.strasseProperty = new SimpleStringProperty(strasse);
-        this.hausNrProperty = new SimpleIntegerProperty(hausNr);
-        gebProperty = geb;
+    public Mitarbeiter(int mitarbeiterId, String vorname, String nachname,
+                       Integer plz, String strasse, Integer HausNr, Date geburtstag) {
+        MitarbeiterId = mitarbeiterId;
+        Vorname = vorname;
+        Nachname = nachname;
+        Plz = plz;
+        Strasse = strasse;
+        this.HausNr = HausNr;
+        Geburtstag = geburtstag;
     }
 
-    public int getMId() {
+    public int getMitarbeiterId() {
         return MitarbeiterId;
     }
 
-    public String getVornameProperty() {
-        return vornameProperty.get();
+    public String getVorname() {
+        return Vorname;
     }
 
-    public StringProperty vornamePropertyProperty() {
-        return vornameProperty;
-    } //für die TableView
-
-    public void setVornameProperty(String vornameProperty) {
-        this.vornameProperty.set(vornameProperty);
+    public void setVorname(String vorname) {
+        Vorname = vorname;
     }
 
-    public String getNachnameProperty() {
-        return nachnameProperty.get();
+    public String getNachname() {
+        return Nachname;
     }
 
-    public StringProperty nachnamePropertyProperty() {
-        return nachnameProperty;
+    public void setNachname(String nachname) {
+        Nachname = nachname;
     }
 
-    public void setNachnameProperty(String nachnameProperty) {
-        this.nachnameProperty.set(nachnameProperty);
+    public Integer getPlz() {
+        return Plz;
     }
 
-    public int getPlzProperty() {
-        return plzProperty.get();
+    public void setPlz(Integer plz) {
+        Plz = plz;
     }
 
-    public IntegerProperty plzPropertyProperty() {
-        return plzProperty;
+    public String getStrasse() {
+        return Strasse;
     }
 
-    public void setPlzProperty(int plzProperty) {
-        this.plzProperty.set(plzProperty);
+    public void setStrasse(String strasse) {
+        Strasse = strasse;
     }
 
-    public String getStrasseProperty() {
-        return strasseProperty.get();
+    public Integer getHausNr() {
+        return HausNr;
     }
 
-    public StringProperty strassePropertyProperty() {
-        return strasseProperty;
+    public void setHausNr(Integer HausNr) {
+        this.HausNr = HausNr;
     }
 
-    public void setStrasseProperty(String strasseProperty) {
-        this.strasseProperty.set(strasseProperty);
+    public Date getGeburtstag() {
+        return Geburtstag;
     }
 
-    public int getHausNrProperty() {
-        return hausNrProperty.get();
+    public void setGeburtstag(Date geburtstag) {
+        Geburtstag = geburtstag;
     }
 
-    public IntegerProperty hausNrPropertyProperty() {
-        return hausNrProperty;
-    }
-
-    public void setHausNrProperty(int hausNrProperty) {
-        this.hausNrProperty.set(hausNrProperty);
-    }
-
-    public Date getGebProperty() {
-        return gebProperty;
-    }
-
-    public void setGebProperty(Date gebProperty) {
-        this.gebProperty = gebProperty;
+    @Override
+    public String toString() {
+        return  "Vorname: " + Vorname +
+                ", Nachname: " + Nachname;
     }
 }

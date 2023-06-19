@@ -4,15 +4,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="309.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooprojekt2.HelloController">
+<AnchorPane id="AnchorPane" prefHeight="585.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooprojekt2.HelloController">
     <children>
-        <TableView fx:id="tvPersons" layoutX="20.0" layoutY="87.0" prefHeight="200.0" prefWidth="451.0">
+        <TableView fx:id="tvZoo" layoutX="20.0" layoutY="87.0" prefHeight="200.0" prefWidth="457.0" style="-fx-background-color: purple;-fx-text-fill: white">
             <columns>
-                <TableColumn fx:id="tcName" prefWidth="77.00000190734863" text="Name" />
-                <TableColumn fx:id="tcOeffnungszeiten" prefWidth="102.20000457763672" text="Öffnungszeiten" />
+                <TableColumn fx:id="tcName" prefWidth="74.60000801086426" text="Name" />
+                <TableColumn fx:id="tcOeffnungszeiten" prefWidth="105.39998626708984" text="Öffnungszeiten" />
                 <TableColumn fx:id="tcSchliesszeiten" prefWidth="98.60000610351562" text="Schließzeiten" />
-                <TableColumn fx:id="tcOrt" prefWidth="79.800048828125" text="Ort" />
-                <TableColumn fx:id="tcEintrittskosten" prefWidth="91.19999999999999" text="Eintrittskosten" />
+                <TableColumn fx:id="tcOrt" prefWidth="78.0" text="Ort" />
+                <TableColumn fx:id="tcEintrittskosten" prefWidth="98.39998779296877" text="Eintrittskosten" />
             </columns>
         </TableView>
         <Text layoutX="222.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zoo" textAlignment="CENTER" underline="true">
@@ -21,6 +21,40 @@
             </font>
         </Text>
         <ChoiceBox fx:id="cbZoo" layoutX="170.0" layoutY="56.0" prefWidth="150.0" />
-      <Button fx:id="btnShow" layoutX="333.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleShow" text="show" />
+      <Button fx:id="btnShowZoo" layoutX="333.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleShowZoo" style="-fx-background-color: blue;-fx-text-fill: white" text="show" />
+      <TableView fx:id="tvTiere" style="-fx-background-color: green;-fx-text-fill: white" layoutX="12.0" layoutY="360.0" prefHeight="200.0" prefWidth="479.0">
+        <columns>
+          <TableColumn fx:id="tcTName" prefWidth="85.20001411437988" text="Name" />
+          <TableColumn fx:id="tcArt" prefWidth="92.79998016357422" text="Art" />
+            <TableColumn fx:id="tcAlter" prefWidth="48.800018310546875" text="Alter" />
+            <TableColumn fx:id="tcGeschlecht" prefWidth="75.0" text="Geschlecht" />
+            <TableColumn fx:id="tcGehege" prefWidth="75.0" text="Gehege" />
+            <TableColumn fx:id="tcFutterzeit" prefWidth="100.00001831054686" text="Futterzeit" />
+        </columns>
+      </TableView>
+      <Text layoutX="225.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiere" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="cbTiere" layoutX="174.0" layoutY="327.0" prefWidth="150.0" />
+      <Button fx:id="btnShowTiere" layoutX="337.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleShowTiere" style="-fx-background-color: blue;-fx-text-fill: white" text="show" />
+      <TableView fx:id="tvMitarbeiter" style="-fx-background-color: black;-fx-text-fill: white" layoutX="540.0" layoutY="191.0" prefHeight="200.0" prefWidth="488.0">
+         <columns>
+            <TableColumn fx:id="tcVorname" prefWidth="74.5999755859375" text="Vorname" />
+            <TableColumn fx:id="tcNachname" prefWidth="103.800048828125" text="Nachname" />
+            <TableColumn fx:id="tcPlz" prefWidth="48.800018310546875" text="Plz" />
+            <TableColumn fx:id="tcStrasse" prefWidth="96.20001220703125" text="Straße" />
+            <TableColumn fx:id="tcHausNr" prefWidth="54.800048828125" text="HausNr" />
+            <TableColumn fx:id="tcGeburtstag" prefWidth="114.60003662109375" text="Geburtstag" />
+         </columns>
+      </TableView>
+      <Text layoutX="714.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiter" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="cbMitarbeiter" layoutX="688.0" layoutY="153.0" prefWidth="150.0" />
+      <Button fx:id="btnShowMitarbeiter" layoutX="851.0" layoutY="153.0" mnemonicParsing="false" onAction="#handleShowMitarbeiter" style="-fx-background-color: blue;-fx-text-fill: white" text="show" />
     </children>
 </AnchorPane>

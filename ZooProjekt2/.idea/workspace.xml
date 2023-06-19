@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a576cbc-1142-4342-a14b-b3dec30f4fd3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ZooProjekt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ZooProjekt/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zooprojekt2/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mitarbeiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mitarbeiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MitarbeiterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tiere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/TiereDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TiereDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ZooDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/zooprojekt2/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/zooprojekt2/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +36,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Sabine Kollegger/Downloads/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sabine Kollegger/Downloads/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sabine Kollegger\OneDrive\Dokumente\GitHub\zooprojekt\ZooProjekt2\src\main\java" />
